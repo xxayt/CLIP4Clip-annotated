@@ -1,5 +1,29 @@
 # CLIP4Clip: An Empirical Study of CLIP for End to End Video Clip Retrieval
 
+## Rerun result
+
+**Note**: ==[**Rerun result**] / [Paper result]== in tables.
+
+- MSRVTT (Training-9K)
+  - text to video retrieval
+    |   Methods   | R@1$\uparrow$ | R@5$\uparrow$ | R@10$\uparrow$ | MdR$\downarrow$  | MnR$\downarrow$ |
+    | :---------: | :------------: | :--: | :--: | :--: | :--: |
+    | meanP | 42.6 / 43.1 | 68.9 / 70.4 | 80.4 / 80.8 | 2 / 2 | 16.7 / 16.2 |
+    | seqLSTM |  / 42.5 | 70.8 | 80.7 | 2 | 16.7 |
+    | seqTransf | 43.0 / **44.5** | 70.2 / 71.4 | 81.4 / **81.6** | 2 / 2 | 15.0 / 15.3 |
+    | tightTransf |  / 40.2 | **71.5** | 80.5 | 2 | **13.4** |
+
+  - video to text retrieval
+    |   Methods   | R@1$\uparrow$ | R@5$\uparrow$ | R@10$\uparrow$ | MdR$\downarrow$  | MnR$\downarrow$ |
+    | :---------: | :------------: | :--: | :--: | :--: | :--: |
+    | meanP | 42.8 / 43.1 | 70.5 / 70.5 | 80.7 / 81.2 | 2 / 2 | 12.5 / 12.4 |
+    | seqLSTM |  / 42.8 | 71.0 | 80.4 | 2 | 12.3 |
+    | seqTransf | 42.3 / 42.7 | 69.6 / 70.9 | 81.8 / 80.6 | 2 / 2 | 11.8 / 11.6 |
+    | tightTransf |  / 40.6 | 69.5 | 79.5 | 2 | 13.6 |
+
+
+---
+
 (**July 28, 2021**) Add ViT-B/16 with an extra `--pretrained_clip_name`
 
 (**Apr. 22, 2021**) First version 

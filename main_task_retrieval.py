@@ -147,14 +147,11 @@ def set_seed_logger(args):
         logger.info("Effective parameters:")
         for key in sorted(args.__dict__):
             logger.info("  <<< {}: {}".format(key, args.__dict__[key]))
-
     return args
 
 def init_device(args, local_rank):
     global logger
-
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu", local_rank)
-
     n_gpu = torch.cuda.device_count()
     logger.info("device: {} n_gpu: {}".format(device, n_gpu))
     args.n_gpu = n_gpu
@@ -162,11 +159,9 @@ def init_device(args, local_rank):
     if args.batch_size % args.n_gpu != 0 or args.batch_size_val % args.n_gpu != 0:
         raise ValueError("Invalid batch_size/batch_size_val and n_gpu parameter: {}%{} and {}%{}, should be == 0".format(
             args.batch_size, args.n_gpu, args.batch_size_val, args.n_gpu))
-
     return device, n_gpu
 
 def init_model(args, device, n_gpu, local_rank):
-
     if args.init_model:
         model_state_dict = torch.load(args.init_model, map_location='cpu')
     else:
@@ -175,13 +170,10 @@ def init_model(args, device, n_gpu, local_rank):
     # Prepare model
     cache_dir = args.cache_dir if args.cache_dir else os.path.join(str(PYTORCH_PRETRAINED_BERT_CACHE), 'distributed')
     model = CLIP4Clip.from_pretrained(args.cross_model, cache_dir=cache_dir, state_dict=model_state_dict, task_config=args)
-
     model.to(device)
-
     return model
 
 def prep_optimizer(args, model, num_train_optimization_steps, device, n_gpu, local_rank, coef_lr=1.):
-
     if hasattr(model, 'module'):
         model = model.module
 
