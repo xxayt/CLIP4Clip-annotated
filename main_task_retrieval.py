@@ -24,6 +24,7 @@ global logger
 
 def get_args(description='CLIP4Clip on Retrieval Task'):
     parser = argparse.ArgumentParser(description=description)
+    parser.add_argument("--name", type=str, help="Name of the experiment.")
     parser.add_argument("--do_pretrain", action='store_true', help="Whether to run training.")
     parser.add_argument("--do_train", action='store_true', help="Whether to run training.")
     parser.add_argument("--do_eval", action='store_true', help="Whether to run eval on the dev set.")
@@ -103,7 +104,6 @@ def get_args(description='CLIP4Clip on Retrieval Task'):
                         help="choice a similarity header.")
 
     parser.add_argument("--pretrained_clip_name", default="ViT-B/32", type=str, help="Choose a CLIP version")
-
     args = parser.parse_args()
 
     if args.sim_header == "tightTransf":
@@ -111,12 +111,12 @@ def get_args(description='CLIP4Clip on Retrieval Task'):
 
     # Check paramenters
     if args.gradient_accumulation_steps < 1:
-        raise ValueError("Invalid gradient_accumulation_steps parameter: {}, should be >= 1".format(
-            args.gradient_accumulation_steps))
+        raise ValueError("Invalid gradient_accumulation_steps parameter: {}, should be >= 1".format(args.gradient_accumulation_steps))
     if not args.do_train and not args.do_eval:
         raise ValueError("At least one of `do_train` or `do_eval` must be True.")
 
     args.batch_size = int(args.batch_size / args.gradient_accumulation_steps)
+    args.path_log = os.path.join(args.output_dir, f'{args.datatype}', f'{args.name}')  # 确定训练log保存路径
 
     return args
 
@@ -138,10 +138,10 @@ def set_seed_logger(args):
     rank = torch.distributed.get_rank()
     args.rank = rank
 
-    if not os.path.exists(args.output_dir):
-        os.makedirs(args.output_dir, exist_ok=True)
+    if not os.path.exists(args.path_log):
+        os.makedirs(args.path_log, exist_ok=True)
 
-    logger = get_logger(os.path.join(args.output_dir, "log.txt"))
+    logger = get_logger(os.path.join(args.path_log, "log.txt"))
 
     if args.local_rank == 0:
         logger.info("Effective parameters:")
@@ -211,18 +211,16 @@ def prep_optimizer(args, model, num_train_optimization_steps, device, n_gpu, loc
                          t_total=num_train_optimization_steps, weight_decay=weight_decay,
                          max_grad_norm=1.0)
 
-    model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[local_rank],
-                                                      output_device=local_rank, find_unused_parameters=True)
-
+    model = torch.nn.parallel.DistributedDataParallel(model, device_ids=[local_rank], output_device=local_rank, find_unused_parameters=True)
     return optimizer, scheduler, model
 
 def save_model(epoch, args, model, optimizer, tr_loss, type_name=""):
     # Only save the model it-self
     model_to_save = model.module if hasattr(model, 'module') else model
     output_model_file = os.path.join(
-        args.output_dir, "pytorch_model.bin.{}{}".format("" if type_name=="" else type_name+".", epoch))
+        args.path_log, "pytorch_model.bin.{}{}".format("" if type_name=="" else type_name+".", epoch))
     optimizer_state_file = os.path.join(
-        args.output_dir, "pytorch_opt.bin.{}{}".format("" if type_name=="" else type_name+".", epoch))
+        args.path_log, "pytorch_opt.bin.{}{}".format("" if type_name=="" else type_name+".", epoch))
     torch.save(model_to_save.state_dict(), output_model_file)
     torch.save({
             'epoch': epoch,
@@ -235,7 +233,7 @@ def save_model(epoch, args, model, optimizer, tr_loss, type_name=""):
 
 def load_model(epoch, args, n_gpu, device, model_file=None):
     if model_file is None or len(model_file) == 0:
-        model_file = os.path.join(args.output_dir, "pytorch_model.bin.{}".format(epoch))
+        model_file = os.path.join(args.path_log, "pytorch_model.bin.{}".format(epoch))
     if os.path.exists(model_file):
         model_state_dict = torch.load(model_file, map_location='cpu')
         if args.local_rank == 0:

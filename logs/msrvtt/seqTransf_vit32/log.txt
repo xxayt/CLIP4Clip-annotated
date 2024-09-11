@@ -1,0 +1,307 @@
+2024-09-11 10:33:57,173:INFO: device: cuda:2 n_gpu: 4
+2024-09-11 10:33:57,177:INFO: device: cuda:3 n_gpu: 4
+2024-09-11 10:33:57,177:INFO: Effective parameters:
+2024-09-11 10:33:57,177:INFO:   <<< batch_size: 128
+2024-09-11 10:33:57,177:INFO:   <<< batch_size_val: 16
+2024-09-11 10:33:57,177:INFO:   <<< cache_dir: 
+2024-09-11 10:33:57,177:INFO:   <<< coef_lr: 0.001
+2024-09-11 10:33:57,177:INFO:   <<< cross_model: cross-base
+2024-09-11 10:33:57,178:INFO:   <<< cross_num_hidden_layers: 4
+2024-09-11 10:33:57,178:INFO:   <<< data_path: /home/xinzijie/Projects/CLIP4Clip/datasets/msrvtt_data/MSRVTT_data.json
+2024-09-11 10:33:57,178:INFO:   <<< datatype: msrvtt
+2024-09-11 10:33:57,178:INFO:   <<< do_eval: False
+2024-09-11 10:33:57,178:INFO:   <<< do_lower_case: False
+2024-09-11 10:33:57,178:INFO:   <<< do_pretrain: False
+2024-09-11 10:33:57,178:INFO: device: cuda:1 n_gpu: 4
+2024-09-11 10:33:57,178:INFO:   <<< do_train: True
+2024-09-11 10:33:57,178:INFO:   <<< epochs: 5
+2024-09-11 10:33:57,178:INFO:   <<< eval_frame_order: 0
+2024-09-11 10:33:57,178:INFO:   <<< expand_msrvtt_sentences: True
+2024-09-11 10:33:57,178:INFO:   <<< feature_framerate: 1
+2024-09-11 10:33:57,179:INFO:   <<< features_path: /home/xinzijie/VisualSearch/msrvtt10k/ImageData
+2024-09-11 10:33:57,179:INFO:   <<< fp16: False
+2024-09-11 10:33:57,179:INFO:   <<< fp16_opt_level: O1
+2024-09-11 10:33:57,179:INFO:   <<< freeze_layer_num: 0
+2024-09-11 10:33:57,179:INFO:   <<< gradient_accumulation_steps: 1
+2024-09-11 10:33:57,179:INFO:   <<< hard_negative_rate: 0.5
+2024-09-11 10:33:57,179:INFO:   <<< init_model: None
+2024-09-11 10:33:57,179:INFO:   <<< linear_patch: 2d
+2024-09-11 10:33:57,179:INFO:   <<< local_rank: 0
+2024-09-11 10:33:57,179:INFO:   <<< loose_type: True
+2024-09-11 10:33:57,179:INFO:   <<< lr: 0.0001
+2024-09-11 10:33:57,180:INFO:   <<< lr_decay: 0.9
+2024-09-11 10:33:57,180:INFO:   <<< margin: 0.1
+2024-09-11 10:33:57,180:INFO:   <<< max_frames: 12
+2024-09-11 10:33:57,180:INFO:   <<< max_words: 32
+2024-09-11 10:33:57,180:INFO:   <<< n_display: 50
+2024-09-11 10:33:57,180:INFO:   <<< n_gpu: 1
+2024-09-11 10:33:57,180:INFO:   <<< n_pair: 1
+2024-09-11 10:33:57,180:INFO:   <<< name: seqTransf_vit32
+2024-09-11 10:33:57,180:INFO:   <<< negative_weighting: 1
+2024-09-11 10:33:57,180:INFO:   <<< num_thread_reader: 8
+2024-09-11 10:33:57,180:INFO:   <<< output_dir: logs
+2024-09-11 10:33:57,180:INFO:   <<< path_log: logs/msrvtt/seqTransf_vit32
+2024-09-11 10:33:57,181:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-09-11 10:33:57,181:INFO:   <<< rank: 0
+2024-09-11 10:33:57,181:INFO:   <<< resume_model: None
+2024-09-11 10:33:57,181:INFO:   <<< sampled_use_mil: False
+2024-09-11 10:33:57,181:INFO:   <<< seed: 42
+2024-09-11 10:33:57,181:INFO:   <<< sim_header: seqTransf
+2024-09-11 10:33:57,181:INFO:   <<< slice_framepos: 2
+2024-09-11 10:33:57,181:INFO:   <<< task_type: retrieval
+2024-09-11 10:33:57,181:INFO:   <<< text_num_hidden_layers: 12
+2024-09-11 10:33:57,181:INFO:   <<< train_csv: /home/xinzijie/Projects/CLIP4Clip/datasets/msrvtt_data/MSRVTT_train.9k.csv
+2024-09-11 10:33:57,181:INFO:   <<< train_frame_order: 0
+2024-09-11 10:33:57,181:INFO:   <<< use_mil: False
+2024-09-11 10:33:57,181:INFO:   <<< val_csv: /home/xinzijie/Projects/CLIP4Clip/datasets/msrvtt_data/MSRVTT_JSFUSION_test.csv
+2024-09-11 10:33:57,181:INFO:   <<< video_dim: 1024
+2024-09-11 10:33:57,181:INFO:   <<< visual_num_hidden_layers: 12
+2024-09-11 10:33:57,181:INFO:   <<< warmup_proportion: 0.1
+2024-09-11 10:33:57,182:INFO:   <<< world_size: 4
+2024-09-11 10:33:57,182:INFO: device: cuda:0 n_gpu: 4
+2024-09-11 10:33:59,563:INFO: loading archive file /data3/xinzijie/Projects/CLIP4Clip-annotated/modules/cross-base
+2024-09-11 10:33:59,564:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 128,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-09-11 10:33:59,564:INFO: Weight doesn't exsits. /data3/xinzijie/Projects/CLIP4Clip-annotated/modules/cross-base/cross_pytorch_model.bin
+2024-09-11 10:33:59,564:WARNING: Stage-One:True, Stage-Two:False
+2024-09-11 10:33:59,564:WARNING: Test retrieval by loose type.
+2024-09-11 10:33:59,565:WARNING: 	 embed_dim: 512
+2024-09-11 10:33:59,565:WARNING: 	 image_resolution: 224
+2024-09-11 10:33:59,565:WARNING: 	 vision_layers: 12
+2024-09-11 10:33:59,565:WARNING: 	 vision_width: 768
+2024-09-11 10:33:59,565:WARNING: 	 vision_patch_size: 32
+2024-09-11 10:33:59,565:WARNING: 	 context_length: 77
+2024-09-11 10:33:59,565:WARNING: 	 vocab_size: 49408
+2024-09-11 10:33:59,565:WARNING: 	 transformer_width: 512
+2024-09-11 10:33:59,565:WARNING: 	 transformer_heads: 8
+2024-09-11 10:33:59,565:WARNING: 	 transformer_layers: 12
+2024-09-11 10:33:59,565:WARNING: 		 linear_patch: 2d
+2024-09-11 10:33:59,565:WARNING: 	 cut_top_layer: 0
+2024-09-11 10:34:01,442:WARNING: 	 sim_header: seqTransf
+2024-09-11 10:34:06,399:INFO: --------------------
+2024-09-11 10:34:06,400:INFO: Weights from pretrained model not used in CLIP4Clip: 
+   clip.input_resolution
+   clip.context_length
+   clip.vocab_size
+2024-09-11 10:35:33,259:INFO: device: cuda:2 n_gpu: 4
+2024-09-11 10:35:33,279:INFO: device: cuda:3 n_gpu: 4
+2024-09-11 10:35:33,283:INFO: device: cuda:1 n_gpu: 4
+2024-09-11 10:35:33,284:INFO: Effective parameters:
+2024-09-11 10:35:33,285:INFO:   <<< batch_size: 128
+2024-09-11 10:35:33,285:INFO:   <<< batch_size_val: 16
+2024-09-11 10:35:33,285:INFO:   <<< cache_dir: 
+2024-09-11 10:35:33,285:INFO:   <<< coef_lr: 0.001
+2024-09-11 10:35:33,285:INFO:   <<< cross_model: cross-base
+2024-09-11 10:35:33,285:INFO:   <<< cross_num_hidden_layers: 4
+2024-09-11 10:35:33,285:INFO:   <<< data_path: /home/xinzijie/Projects/CLIP4Clip-annotated/datasets/msrvtt_data/MSRVTT_data.json
+2024-09-11 10:35:33,285:INFO:   <<< datatype: msrvtt
+2024-09-11 10:35:33,285:INFO:   <<< do_eval: False
+2024-09-11 10:35:33,285:INFO:   <<< do_lower_case: False
+2024-09-11 10:35:33,285:INFO:   <<< do_pretrain: False
+2024-09-11 10:35:33,285:INFO:   <<< do_train: True
+2024-09-11 10:35:33,285:INFO:   <<< epochs: 5
+2024-09-11 10:35:33,285:INFO:   <<< eval_frame_order: 0
+2024-09-11 10:35:33,285:INFO:   <<< expand_msrvtt_sentences: True
+2024-09-11 10:35:33,285:INFO:   <<< feature_framerate: 1
+2024-09-11 10:35:33,285:INFO:   <<< features_path: /home/xinzijie/VisualSearch/msrvtt10k/ImageData
+2024-09-11 10:35:33,285:INFO:   <<< fp16: False
+2024-09-11 10:35:33,285:INFO:   <<< fp16_opt_level: O1
+2024-09-11 10:35:33,286:INFO:   <<< freeze_layer_num: 0
+2024-09-11 10:35:33,286:INFO:   <<< gradient_accumulation_steps: 1
+2024-09-11 10:35:33,286:INFO:   <<< hard_negative_rate: 0.5
+2024-09-11 10:35:33,286:INFO:   <<< init_model: None
+2024-09-11 10:35:33,286:INFO:   <<< linear_patch: 2d
+2024-09-11 10:35:33,286:INFO:   <<< local_rank: 0
+2024-09-11 10:35:33,286:INFO:   <<< loose_type: True
+2024-09-11 10:35:33,286:INFO:   <<< lr: 0.0001
+2024-09-11 10:35:33,286:INFO:   <<< lr_decay: 0.9
+2024-09-11 10:35:33,286:INFO:   <<< margin: 0.1
+2024-09-11 10:35:33,286:INFO:   <<< max_frames: 12
+2024-09-11 10:35:33,286:INFO:   <<< max_words: 32
+2024-09-11 10:35:33,286:INFO:   <<< n_display: 50
+2024-09-11 10:35:33,286:INFO:   <<< n_gpu: 1
+2024-09-11 10:35:33,286:INFO:   <<< n_pair: 1
+2024-09-11 10:35:33,287:INFO:   <<< name: seqTransf_vit32
+2024-09-11 10:35:33,287:INFO:   <<< negative_weighting: 1
+2024-09-11 10:35:33,287:INFO:   <<< num_thread_reader: 8
+2024-09-11 10:35:33,287:INFO:   <<< output_dir: logs
+2024-09-11 10:35:33,287:INFO:   <<< path_log: logs/msrvtt/seqTransf_vit32
+2024-09-11 10:35:33,287:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-09-11 10:35:33,287:INFO:   <<< rank: 0
+2024-09-11 10:35:33,287:INFO:   <<< resume_model: None
+2024-09-11 10:35:33,287:INFO:   <<< sampled_use_mil: False
+2024-09-11 10:35:33,287:INFO:   <<< seed: 42
+2024-09-11 10:35:33,287:INFO:   <<< sim_header: seqTransf
+2024-09-11 10:35:33,287:INFO:   <<< slice_framepos: 2
+2024-09-11 10:35:33,287:INFO:   <<< task_type: retrieval
+2024-09-11 10:35:33,287:INFO:   <<< text_num_hidden_layers: 12
+2024-09-11 10:35:33,287:INFO:   <<< train_csv: /home/xinzijie/Projects/CLIP4Clip-annotated/datasets/msrvtt_data/MSRVTT_train.9k.csv
+2024-09-11 10:35:33,288:INFO:   <<< train_frame_order: 0
+2024-09-11 10:35:33,288:INFO:   <<< use_mil: False
+2024-09-11 10:35:33,288:INFO:   <<< val_csv: /home/xinzijie/Projects/CLIP4Clip-annotated/datasets/msrvtt_data/MSRVTT_JSFUSION_test.csv
+2024-09-11 10:35:33,288:INFO:   <<< video_dim: 1024
+2024-09-11 10:35:33,288:INFO:   <<< visual_num_hidden_layers: 12
+2024-09-11 10:35:33,288:INFO:   <<< warmup_proportion: 0.1
+2024-09-11 10:35:33,288:INFO:   <<< world_size: 4
+2024-09-11 10:35:33,288:INFO: device: cuda:0 n_gpu: 4
+2024-09-11 10:35:36,046:INFO: loading archive file /data3/xinzijie/Projects/CLIP4Clip-annotated/modules/cross-base
+2024-09-11 10:35:36,047:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 128,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-09-11 10:35:36,048:INFO: Weight doesn't exsits. /data3/xinzijie/Projects/CLIP4Clip-annotated/modules/cross-base/cross_pytorch_model.bin
+2024-09-11 10:35:36,048:WARNING: Stage-One:True, Stage-Two:False
+2024-09-11 10:35:36,048:WARNING: Test retrieval by loose type.
+2024-09-11 10:35:36,048:WARNING: 	 embed_dim: 512
+2024-09-11 10:35:36,049:WARNING: 	 image_resolution: 224
+2024-09-11 10:35:36,049:WARNING: 	 vision_layers: 12
+2024-09-11 10:35:36,049:WARNING: 	 vision_width: 768
+2024-09-11 10:35:36,049:WARNING: 	 vision_patch_size: 32
+2024-09-11 10:35:36,049:WARNING: 	 context_length: 77
+2024-09-11 10:35:36,049:WARNING: 	 vocab_size: 49408
+2024-09-11 10:35:36,049:WARNING: 	 transformer_width: 512
+2024-09-11 10:35:36,049:WARNING: 	 transformer_heads: 8
+2024-09-11 10:35:36,049:WARNING: 	 transformer_layers: 12
+2024-09-11 10:35:36,049:WARNING: 		 linear_patch: 2d
+2024-09-11 10:35:36,049:WARNING: 	 cut_top_layer: 0
+2024-09-11 10:35:38,232:WARNING: 	 sim_header: seqTransf
+2024-09-11 10:35:43,801:INFO: --------------------
+2024-09-11 10:35:43,801:INFO: Weights from pretrained model not used in CLIP4Clip: 
+   clip.input_resolution
+   clip.context_length
+   clip.vocab_size
+2024-09-11 10:35:46,308:INFO: ***** Running test *****
+2024-09-11 10:35:46,308:INFO:   Num examples = 1000
+2024-09-11 10:35:46,308:INFO:   Batch size = 16
+2024-09-11 10:35:46,308:INFO:   Num steps = 63
+2024-09-11 10:35:46,308:INFO: ***** Running val *****
+2024-09-11 10:35:46,308:INFO:   Num examples = 1000
+2024-09-11 10:36:07,537:INFO: device: cuda:1 n_gpu: 4
+2024-09-11 10:36:07,538:INFO: Effective parameters:
+2024-09-11 10:36:07,538:INFO:   <<< batch_size: 128
+2024-09-11 10:36:07,538:INFO:   <<< batch_size_val: 16
+2024-09-11 10:36:07,538:INFO:   <<< cache_dir: 
+2024-09-11 10:36:07,538:INFO:   <<< coef_lr: 0.001
+2024-09-11 10:36:07,538:INFO:   <<< cross_model: cross-base
+2024-09-11 10:36:07,538:INFO:   <<< cross_num_hidden_layers: 4
+2024-09-11 10:36:07,538:INFO:   <<< data_path: ./datasets/msrvtt_data/MSRVTT_data.json
+2024-09-11 10:36:07,538:INFO:   <<< datatype: msrvtt
+2024-09-11 10:36:07,539:INFO:   <<< do_eval: False
+2024-09-11 10:36:07,539:INFO:   <<< do_lower_case: False
+2024-09-11 10:36:07,539:INFO:   <<< do_pretrain: False
+2024-09-11 10:36:07,539:INFO:   <<< do_train: True
+2024-09-11 10:36:07,539:INFO:   <<< epochs: 5
+2024-09-11 10:36:07,539:INFO:   <<< eval_frame_order: 0
+2024-09-11 10:36:07,539:INFO:   <<< expand_msrvtt_sentences: True
+2024-09-11 10:36:07,539:INFO:   <<< feature_framerate: 1
+2024-09-11 10:36:07,539:INFO:   <<< features_path: /home/xinzijie/VisualSearch/msrvtt10k/ImageData
+2024-09-11 10:36:07,539:INFO:   <<< fp16: False
+2024-09-11 10:36:07,539:INFO:   <<< fp16_opt_level: O1
+2024-09-11 10:36:07,539:INFO:   <<< freeze_layer_num: 0
+2024-09-11 10:36:07,539:INFO:   <<< gradient_accumulation_steps: 1
+2024-09-11 10:36:07,539:INFO:   <<< hard_negative_rate: 0.5
+2024-09-11 10:36:07,539:INFO:   <<< init_model: None
+2024-09-11 10:36:07,540:INFO:   <<< linear_patch: 2d
+2024-09-11 10:36:07,540:INFO:   <<< local_rank: 0
+2024-09-11 10:36:07,540:INFO:   <<< loose_type: True
+2024-09-11 10:36:07,540:INFO:   <<< lr: 0.0001
+2024-09-11 10:36:07,540:INFO:   <<< lr_decay: 0.9
+2024-09-11 10:36:07,540:INFO:   <<< margin: 0.1
+2024-09-11 10:36:07,540:INFO:   <<< max_frames: 12
+2024-09-11 10:36:07,540:INFO:   <<< max_words: 32
+2024-09-11 10:36:07,540:INFO:   <<< n_display: 50
+2024-09-11 10:36:07,540:INFO:   <<< n_gpu: 1
+2024-09-11 10:36:07,540:INFO:   <<< n_pair: 1
+2024-09-11 10:36:07,540:INFO:   <<< name: seqTransf_vit32
+2024-09-11 10:36:07,540:INFO:   <<< negative_weighting: 1
+2024-09-11 10:36:07,541:INFO:   <<< num_thread_reader: 8
+2024-09-11 10:36:07,541:INFO:   <<< output_dir: logs
+2024-09-11 10:36:07,541:INFO:   <<< path_log: logs/msrvtt/seqTransf_vit32
+2024-09-11 10:36:07,541:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-09-11 10:36:07,541:INFO:   <<< rank: 0
+2024-09-11 10:36:07,541:INFO: device: cuda:3 n_gpu: 4
+2024-09-11 10:36:07,541:INFO:   <<< resume_model: None
+2024-09-11 10:36:07,541:INFO:   <<< sampled_use_mil: False
+2024-09-11 10:36:07,541:INFO:   <<< seed: 42
+2024-09-11 10:36:07,541:INFO:   <<< sim_header: seqTransf
+2024-09-11 10:36:07,541:INFO:   <<< slice_framepos: 2
+2024-09-11 10:36:07,541:INFO:   <<< task_type: retrieval
+2024-09-11 10:36:07,541:INFO:   <<< text_num_hidden_layers: 12
+2024-09-11 10:36:07,541:INFO: device: cuda:2 n_gpu: 4
+2024-09-11 10:36:07,541:INFO:   <<< train_csv: ./datasets/msrvtt_data/MSRVTT_train.9k.csv
+2024-09-11 10:36:07,541:INFO:   <<< train_frame_order: 0
+2024-09-11 10:36:07,541:INFO:   <<< use_mil: False
+2024-09-11 10:36:07,541:INFO:   <<< val_csv: ./datasets/msrvtt_data/MSRVTT_JSFUSION_test.csv
+2024-09-11 10:36:07,542:INFO:   <<< video_dim: 1024
+2024-09-11 10:36:07,542:INFO:   <<< visual_num_hidden_layers: 12
+2024-09-11 10:36:07,542:INFO:   <<< warmup_proportion: 0.1
+2024-09-11 10:36:07,542:INFO:   <<< world_size: 4
+2024-09-11 10:36:07,542:INFO: device: cuda:0 n_gpu: 4
+2024-09-11 10:36:09,905:INFO: loading archive file /data3/xinzijie/Projects/CLIP4Clip-annotated/modules/cross-base
+2024-09-11 10:36:09,906:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 128,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-09-11 10:36:09,906:INFO: Weight doesn't exsits. /data3/xinzijie/Projects/CLIP4Clip-annotated/modules/cross-base/cross_pytorch_model.bin
+2024-09-11 10:36:09,906:WARNING: Stage-One:True, Stage-Two:False
+2024-09-11 10:36:09,906:WARNING: Test retrieval by loose type.
+2024-09-11 10:36:09,907:WARNING: 	 embed_dim: 512
+2024-09-11 10:36:09,907:WARNING: 	 image_resolution: 224
+2024-09-11 10:36:09,907:WARNING: 	 vision_layers: 12
+2024-09-11 10:36:09,907:WARNING: 	 vision_width: 768
+2024-09-11 10:36:09,907:WARNING: 	 vision_patch_size: 32
+2024-09-11 10:36:09,907:WARNING: 	 context_length: 77
+2024-09-11 10:36:09,907:WARNING: 	 vocab_size: 49408
+2024-09-11 10:36:09,907:WARNING: 	 transformer_width: 512
+2024-09-11 10:36:09,907:WARNING: 	 transformer_heads: 8
+2024-09-11 10:36:09,907:WARNING: 	 transformer_layers: 12
+2024-09-11 10:36:09,907:WARNING: 		 linear_patch: 2d
+2024-09-11 10:36:09,907:WARNING: 	 cut_top_layer: 0
+2024-09-11 10:36:11,773:WARNING: 	 sim_header: seqTransf
+2024-09-11 10:36:16,642:INFO: --------------------
+2024-09-11 10:36:16,642:INFO: Weights from pretrained model not used in CLIP4Clip: 
+   clip.input_resolution
+   clip.context_length
+   clip.vocab_size
+2024-09-11 10:36:18,875:INFO: ***** Running test *****
+2024-09-11 10:36:18,875:INFO:   Num examples = 1000
+2024-09-11 10:36:18,875:INFO:   Batch size = 16
+2024-09-11 10:36:18,875:INFO:   Num steps = 63
+2024-09-11 10:36:18,875:INFO: ***** Running val *****
+2024-09-11 10:36:18,875:INFO:   Num examples = 1000
+2024-09-11 10:36:45,932:INFO: ***** Running training *****
+2024-09-11 10:36:45,932:INFO:   Num examples = 180000
+2024-09-11 10:36:45,932:INFO:   Batch size = 128
+2024-09-11 10:36:45,932:INFO:   Num steps = 7030
