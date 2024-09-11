@@ -136,21 +136,25 @@ class MSRVTT_DataLoader(Dataset):
         video, video_mask = self._get_rawvideo(choice_video_ids)
         return pairs_text, pairs_mask, pairs_segment, video, video_mask
 
+
+
+
+
 class MSRVTT_TrainDataLoader(Dataset):
     """MSRVTT train dataset loader."""
     def __init__(
             self,
-            csv_path,
-            json_path,
-            features_path,
-            tokenizer,
-            max_words=30,
-            feature_framerate=1.0,
-            max_frames=100,
-            unfold_sentences=False,
-            image_resolution=224,
-            frame_order=0,
-            slice_framepos=0,
+            csv_path,  # 包含训练数据的视频ID和其他元数据的CSV文件路径
+            json_path,  # 包含视频和字幕配对的JSON文件路径
+            features_path,  # 视频特征数据的路径，通常是已提取的特征或原始视频路径
+            tokenizer,  # 用于处理字幕文本的分词器
+            max_words=30,  # 每个字幕允许的最大词数
+            feature_framerate=1.0,  # 每秒提取的特征帧率
+            max_frames=100,  # 每个视频允许的最大帧数
+            unfold_sentences=False,  # 是否展开所有视频字幕对，False表示一个视频配对多个字幕
+            image_resolution=224,  # 图像帧的分辨率
+            frame_order=0,  # 帧的顺序，0: 正常顺序；1: 反向顺序；2: 随机顺序
+            slice_framepos=0,  # 截取帧的方式，0: 从开头截取；1: 从尾部截取；2: 均匀截取
     ):
         self.csv = pd.read_csv(csv_path)
         self.data = json.load(open(json_path, 'r'))
@@ -167,14 +171,14 @@ class MSRVTT_TrainDataLoader(Dataset):
         assert self.slice_framepos in [0, 1, 2]
 
         self.unfold_sentences = unfold_sentences
-        self.sample_len = 0
+        self.sample_len = 0  # 初始化样本数量
         if self.unfold_sentences:
             train_video_ids = list(self.csv['video_id'].values)
             self.sentences_dict = {}
             for itm in self.data['sentences']:
                 if itm['video_id'] in train_video_ids:
                     self.sentences_dict[len(self.sentences_dict)] = (itm['video_id'], itm['caption'])
-            self.sample_len = len(self.sentences_dict)
+            self.sample_len = len(self.sentences_dict)  # 展开所有视频字幕对，样本数量为字典长度
         else:
             num_sentences = 0
             self.sentences = defaultdict(list)

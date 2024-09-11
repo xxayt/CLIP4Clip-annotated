@@ -496,8 +496,7 @@ def main():
     ## ####################################
     assert args.datatype in DATALOADER_DICT
 
-    assert DATALOADER_DICT[args.datatype]["test"] is not None \
-           or DATALOADER_DICT[args.datatype]["val"] is not None
+    assert DATALOADER_DICT[args.datatype]["test"] is not None or DATALOADER_DICT[args.datatype]["val"] is not None
 
     test_dataloader, test_length = None, 0
     if DATALOADER_DICT[args.datatype]["test"] is not None:
