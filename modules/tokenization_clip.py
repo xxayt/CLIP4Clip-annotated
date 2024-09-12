@@ -143,3 +143,14 @@ class SimpleTokenizer(object):
 
     def convert_tokens_to_ids(self, tokens):
         return [self.encoder[bpe_token] for bpe_token in tokens]
+
+
+
+# tokenizer = SimpleTokenizer()
+# caption = "soccer sportscasters get a good laugh from the sideline reporter"
+# tokens = tokenizer.tokenize(caption)
+# print(tokens)
+# ids = tokenizer.convert_tokens_to_ids(tokens)
+# print(ids)
+# text = tokenizer.decode(ids)
+# print(text)

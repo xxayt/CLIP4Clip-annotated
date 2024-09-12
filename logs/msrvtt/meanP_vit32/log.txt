@@ -287,3 +287,21 @@
 2024-09-11 16:51:33,780:INFO: Epoch: 5/5, Step: 976/1406, Lr: 0.000000001, Loss: 0.308974, Time/step: 1.610956
 2024-09-11 16:52:56,376:INFO: Epoch: 5/5, Step: 1026/1406, Lr: 0.000000001, Loss: 0.342442, Time/step: 1.651352
 2024-09-11 16:54:18,522:INFO: Epoch: 5/5, Step: 1076/1406, Lr: 0.000000001, Loss: 0.304707, Time/step: 1.642911
+2024-09-11 16:55:35,704:INFO: Epoch: 5/5, Step: 1126/1406, Lr: 0.000000000, Loss: 0.313175, Time/step: 1.543620
+2024-09-11 16:56:56,790:INFO: Epoch: 5/5, Step: 1176/1406, Lr: 0.000000000, Loss: 0.411357, Time/step: 1.621707
+2024-09-11 16:58:14,714:INFO: Epoch: 5/5, Step: 1226/1406, Lr: 0.000000000, Loss: 0.341084, Time/step: 1.558470
+2024-09-11 16:59:35,484:INFO: Epoch: 5/5, Step: 1276/1406, Lr: 0.000000000, Loss: 0.462701, Time/step: 1.615385
+2024-09-11 17:00:54,210:INFO: Epoch: 5/5, Step: 1326/1406, Lr: 0.000000000, Loss: 0.325026, Time/step: 1.574492
+2024-09-11 17:02:13,396:INFO: Epoch: 5/5, Step: 1376/1406, Lr: 0.000000000, Loss: 0.284298, Time/step: 1.583710
+2024-09-11 17:02:56,870:INFO: Epoch 5/5 Finished, Train Loss: 0.319693
+2024-09-11 17:02:59,813:INFO: Model saved to logs/msrvtt/meanP_vit32/pytorch_model.bin.4
+2024-09-11 17:02:59,813:INFO: Optimizer saved to logs/msrvtt/meanP_vit32/pytorch_opt.bin.4
+2024-09-11 17:02:59,818:WARNING: Eval under the multi-sentence per video clip setting.
+2024-09-11 17:02:59,818:WARNING: sentence num: 1000, video num: 1000
+2024-09-11 17:03:49,178:INFO: before reshape, sim matrix size: 1000 x 1000
+2024-09-11 17:03:49,210:INFO: after reshape, sim matrix size: 1000 x 1 x 1000
+2024-09-11 17:03:49,519:INFO: Text-to-Video:
+2024-09-11 17:03:49,519:INFO: 	>>>  R@1: 40.4 - R@5: 68.9 - R@10: 78.6 - Median R: 2.0 - Mean R: 17.3
+2024-09-11 17:03:49,519:INFO: Video-to-Text:
+2024-09-11 17:03:49,519:INFO: 	>>>  V2T$R@1: 40.1 - V2T$R@5: 68.5 - V2T$R@10: 79.6 - V2T$Median R: 2.0 - V2T$Mean R: 12.4
+2024-09-11 17:03:49,522:INFO: The best model is: logs/msrvtt/meanP_vit32/pytorch_model.bin.0, the R1 is: 42.6000

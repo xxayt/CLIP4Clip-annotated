@@ -144,14 +144,14 @@ class MSRVTT_TrainDataLoader(Dataset):
     """MSRVTT train dataset loader."""
     def __init__(
             self,
-            csv_path,  # 包含训练数据的视频ID和其他元数据的CSV文件路径
-            json_path,  # 包含视频和字幕配对的JSON文件路径
-            features_path,  # 视频特征数据的路径，通常是已提取的特征或原始视频路径
-            tokenizer,  # 用于处理字幕文本的分词器
-            max_words=30,  # 每个字幕允许的最大词数
+            csv_path,  # 包含训练数据的videoID和其他元数据的CSV文件路径
+            json_path,  # 包含video和caption配对的JSON文件路径
+            features_path,  # video特征数据的路径，通常是已提取的特征或原始video路径
+            tokenizer,  # 用于处理caption文本的分词器
+            max_words=30,  # 每个caption允许的最大词数
             feature_framerate=1.0,  # 每秒提取的特征帧率
-            max_frames=100,  # 每个视频允许的最大帧数
-            unfold_sentences=False,  # 是否展开所有视频字幕对，False表示一个视频配对多个字幕
+            max_frames=100,  # 每个video允许的最大帧数
+            unfold_sentences=False,  # 是否展开所有videocaption对，False表示一个video配对多个caption
             image_resolution=224,  # 图像帧的分辨率
             frame_order=0,  # 帧的顺序，0: 正常顺序；1: 反向顺序；2: 随机顺序
             slice_framepos=0,  # 截取帧的方式，0: 从开头截取；1: 从尾部截取；2: 均匀截取
@@ -172,32 +172,39 @@ class MSRVTT_TrainDataLoader(Dataset):
 
         self.unfold_sentences = unfold_sentences
         self.sample_len = 0  # 初始化样本数量
-        if self.unfold_sentences:
-            train_video_ids = list(self.csv['video_id'].values)
+        if self.unfold_sentences:  # 一个caption对应一个sample
+            train_video_ids = list(self.csv['video_id'].values)  # [video1, video2, video3,...]
             self.sentences_dict = {}
             for itm in self.data['sentences']:
+                '''
+                itm = {
+                    "caption": "a cartoon animals runs through an ice cave in a video game",
+                    "video_id": "video2960",
+                    "sen_id": 0
+                }
+                '''
                 if itm['video_id'] in train_video_ids:
                     self.sentences_dict[len(self.sentences_dict)] = (itm['video_id'], itm['caption'])
-            self.sample_len = len(self.sentences_dict)  # 展开所有视频字幕对，样本数量为字典长度
-        else:
+            self.sample_len = len(self.sentences_dict)  # sample number = caption number，总计20w条sen_id
+        else:  # 一个video对应一个sample
             num_sentences = 0
-            self.sentences = defaultdict(list)
-            s_video_id_set = set()
+            self.sentences = defaultdict(list)  # 新建一个value为list的dict，用于存储每个video的caption列表
+            s_video_id_set = set()  # set for storing all video_ids
             for itm in self.data['sentences']:
-                self.sentences[itm['video_id']].append(itm['caption'])
+                self.sentences[itm['video_id']].append(itm['caption'])  # {video1: [caption1, caption2,...], video2: [caption1, caption2,...],...}
                 num_sentences += 1
                 s_video_id_set.add(itm['video_id'])
 
             # Use to find the clips in the same video
             self.parent_ids = {}
-            self.children_video_ids = defaultdict(list)
+            self.children_video_ids = defaultdict(list)  # 新建一个value为list的dict，用于存储每个url_posfix的video列表
             for itm in self.data['videos']:
                 vid = itm["video_id"]
                 url_posfix = itm["url"].split("?v=")[-1]
                 self.parent_ids[vid] = url_posfix
                 self.children_video_ids[url_posfix].append(vid)
-            self.sample_len = len(self.csv)
-
+            self.sample_len = len(self.csv)  # sample number = video number，总计9k/7k条video_id
+        
         self.rawVideoExtractor = RawVideoExtractor(framerate=feature_framerate, size=image_resolution)
         self.SPECIAL_TOKEN = {"CLS_TOKEN": "<|startoftext|>", "SEP_TOKEN": "<|endoftext|>",
                               "MASK_TOKEN": "[MASK]", "UNK_TOKEN": "[UNK]", "PAD_TOKEN": "[PAD]"}
@@ -206,6 +213,8 @@ class MSRVTT_TrainDataLoader(Dataset):
         return self.sample_len
 
     def _get_text(self, video_id, caption=None):
+        ''' 给定video_id和caption，返回对应的caption文本的token id、mask、segment id、video_id
+        '''
         k = 1
         choice_video_ids = [video_id]
         pairs_text = np.zeros((k, self.max_words), dtype=np.long)
@@ -213,13 +222,13 @@ class MSRVTT_TrainDataLoader(Dataset):
         pairs_segment = np.zeros((k, self.max_words), dtype=np.long)
 
         for i, video_id in enumerate(choice_video_ids):
-            if caption is not None:
+            if caption is not None:  # unfold_sentences (每个caption都对应一个sample)
                 words = self.tokenizer.tokenize(caption)
-            else:
+            else:  # fold_sentences (每个video才对应一个sample)
                 words = self._get_single_text(video_id)
 
             words = [self.SPECIAL_TOKEN["CLS_TOKEN"]] + words
-            total_length_with_CLS = self.max_words - 1
+            total_length_with_CLS = self.max_words - 1  # 12-1=11
             if len(words) > total_length_with_CLS:
                 words = words[:total_length_with_CLS]
             words = words + [self.SPECIAL_TOKEN["SEP_TOKEN"]]
@@ -243,7 +252,7 @@ class MSRVTT_TrainDataLoader(Dataset):
 
     def _get_single_text(self, video_id):
         rind = random.randint(0, len(self.sentences[video_id]) - 1)
-        caption = self.sentences[video_id][rind]
+        caption = self.sentences[video_id][rind]  # 在video_id对应的caption列表中随机选取一个caption
         words = self.tokenizer.tokenize(caption)
         return words
 

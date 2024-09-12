@@ -1,0 +1,318 @@
+2024-09-12 08:32:31,347:INFO: device: cuda:5 n_gpu: 8
+2024-09-12 08:32:31,348:INFO: device: cuda:1 n_gpu: 8
+2024-09-12 08:32:31,364:INFO: Effective parameters:
+2024-09-12 08:32:31,364:INFO:   <<< batch_size: 128
+2024-09-12 08:32:31,364:INFO:   <<< batch_size_val: 16
+2024-09-12 08:32:31,364:INFO:   <<< cache_dir: 
+2024-09-12 08:32:31,364:INFO:   <<< coef_lr: 0.001
+2024-09-12 08:32:31,365:INFO:   <<< cross_model: cross-base
+2024-09-12 08:32:31,365:INFO:   <<< cross_num_hidden_layers: 4
+2024-09-12 08:32:31,365:INFO:   <<< data_path: ./datasets/msrvtt_data/MSRVTT_data.json
+2024-09-12 08:32:31,365:INFO:   <<< datatype: msrvtt
+2024-09-12 08:32:31,365:INFO:   <<< do_eval: False
+2024-09-12 08:32:31,365:INFO:   <<< do_lower_case: False
+2024-09-12 08:32:31,365:INFO:   <<< do_pretrain: False
+2024-09-12 08:32:31,365:INFO:   <<< do_train: True
+2024-09-12 08:32:31,365:INFO:   <<< epochs: 5
+2024-09-12 08:32:31,365:INFO:   <<< eval_frame_order: 0
+2024-09-12 08:32:31,365:INFO:   <<< expand_msrvtt_sentences: True
+2024-09-12 08:32:31,365:INFO:   <<< feature_framerate: 1
+2024-09-12 08:32:31,365:INFO: device: cuda:2 n_gpu: 8
+2024-09-12 08:32:31,365:INFO:   <<< features_path: /home/xinzijie/VisualSearch/msrvtt10k/ImageData
+2024-09-12 08:32:31,365:INFO: device: cuda:6 n_gpu: 8
+2024-09-12 08:32:31,365:INFO:   <<< fp16: False
+2024-09-12 08:32:31,365:INFO: device: cuda:4 n_gpu: 8
+2024-09-12 08:32:31,365:INFO:   <<< fp16_opt_level: O1
+2024-09-12 08:32:31,365:INFO:   <<< freeze_layer_num: 0
+2024-09-12 08:32:31,366:INFO:   <<< gradient_accumulation_steps: 1
+2024-09-12 08:32:31,366:INFO:   <<< hard_negative_rate: 0.5
+2024-09-12 08:32:31,366:INFO:   <<< init_model: None
+2024-09-12 08:32:31,366:INFO:   <<< linear_patch: 2d
+2024-09-12 08:32:31,366:INFO: device: cuda:3 n_gpu: 8
+2024-09-12 08:32:31,366:INFO:   <<< local_rank: 0
+2024-09-12 08:32:31,366:INFO:   <<< loose_type: False
+2024-09-12 08:32:31,366:INFO:   <<< lr: 0.0001
+2024-09-12 08:32:31,366:INFO:   <<< lr_decay: 0.9
+2024-09-12 08:32:31,366:INFO:   <<< margin: 0.1
+2024-09-12 08:32:31,366:INFO:   <<< max_frames: 12
+2024-09-12 08:32:31,366:INFO:   <<< max_words: 32
+2024-09-12 08:32:31,366:INFO:   <<< n_display: 50
+2024-09-12 08:32:31,366:INFO:   <<< n_gpu: 1
+2024-09-12 08:32:31,366:INFO:   <<< n_pair: 1
+2024-09-12 08:32:31,366:INFO:   <<< name: tightTransf_vit32
+2024-09-12 08:32:31,366:INFO: device: cuda:7 n_gpu: 8
+2024-09-12 08:32:31,366:INFO:   <<< negative_weighting: 1
+2024-09-12 08:32:31,366:INFO:   <<< num_thread_reader: 8
+2024-09-12 08:32:31,366:INFO:   <<< output_dir: logs
+2024-09-12 08:32:31,367:INFO:   <<< path_log: logs/msrvtt/tightTransf_vit32
+2024-09-12 08:32:31,367:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-09-12 08:32:31,367:INFO:   <<< rank: 0
+2024-09-12 08:32:31,367:INFO:   <<< resume_model: None
+2024-09-12 08:32:31,367:INFO:   <<< sampled_use_mil: False
+2024-09-12 08:32:31,367:INFO:   <<< seed: 42
+2024-09-12 08:32:31,367:INFO:   <<< sim_header: tightTransf
+2024-09-12 08:32:31,367:INFO:   <<< slice_framepos: 2
+2024-09-12 08:32:31,367:INFO:   <<< task_type: retrieval
+2024-09-12 08:32:31,367:INFO:   <<< text_num_hidden_layers: 12
+2024-09-12 08:32:31,367:INFO:   <<< train_csv: ./datasets/msrvtt_data/MSRVTT_train.9k.csv
+2024-09-12 08:32:31,367:INFO:   <<< train_frame_order: 0
+2024-09-12 08:32:31,367:INFO:   <<< use_mil: False
+2024-09-12 08:32:31,367:INFO:   <<< val_csv: ./datasets/msrvtt_data/MSRVTT_JSFUSION_test.csv
+2024-09-12 08:32:31,367:INFO:   <<< video_dim: 1024
+2024-09-12 08:32:31,367:INFO:   <<< visual_num_hidden_layers: 12
+2024-09-12 08:32:31,367:INFO:   <<< warmup_proportion: 0.1
+2024-09-12 08:32:31,367:INFO:   <<< world_size: 8
+2024-09-12 08:32:31,368:INFO: device: cuda:0 n_gpu: 8
+2024-09-12 08:32:34,118:INFO: loading archive file /data3/xinzijie/Projects/CLIP4Clip-annotated/modules/cross-base
+2024-09-12 08:32:34,119:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 128,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-09-12 08:32:34,119:INFO: Weight doesn't exsits. /data3/xinzijie/Projects/CLIP4Clip-annotated/modules/cross-base/cross_pytorch_model.bin
+2024-09-12 08:32:34,120:WARNING: Stage-One:True, Stage-Two:False
+2024-09-12 08:32:34,120:WARNING: 	 embed_dim: 512
+2024-09-12 08:32:34,120:WARNING: 	 image_resolution: 224
+2024-09-12 08:32:34,120:WARNING: 	 vision_layers: 12
+2024-09-12 08:32:34,120:WARNING: 	 vision_width: 768
+2024-09-12 08:32:34,120:WARNING: 	 vision_patch_size: 32
+2024-09-12 08:32:34,120:WARNING: 	 context_length: 77
+2024-09-12 08:32:34,120:WARNING: 	 vocab_size: 49408
+2024-09-12 08:32:34,120:WARNING: 	 transformer_width: 512
+2024-09-12 08:32:34,120:WARNING: 	 transformer_heads: 8
+2024-09-12 08:32:34,120:WARNING: 	 transformer_layers: 12
+2024-09-12 08:32:34,120:WARNING: 		 linear_patch: 2d
+2024-09-12 08:32:34,120:WARNING: 	 cut_top_layer: 0
+2024-09-12 08:32:35,978:WARNING: 	 sim_header: tightTransf
+2024-09-12 08:32:35,979:WARNING: Set cross_config.num_hidden_layers: 4.
+2024-09-12 08:32:40,678:INFO: --------------------
+2024-09-12 08:32:40,678:INFO: Weights of CLIP4Clip not initialized from pretrained model: 
+   cross.pooler.ln_pool.weight
+   cross.pooler.ln_pool.bias
+   cross.pooler.dense.weight
+   cross.pooler.dense.bias
+   similarity_dense.weight
+   similarity_dense.bias
+2024-09-12 08:32:40,678:INFO: Weights from pretrained model not used in CLIP4Clip: 
+   clip.input_resolution
+   clip.context_length
+   clip.vocab_size
+2024-09-12 08:32:43,531:INFO: ***** Running test *****
+2024-09-12 08:32:43,531:INFO:   Num examples = 1000
+2024-09-12 08:32:43,531:INFO:   Batch size = 16
+2024-09-12 08:32:43,531:INFO:   Num steps = 63
+2024-09-12 08:32:43,531:INFO: ***** Running val *****
+2024-09-12 08:32:43,531:INFO:   Num examples = 1000
+2024-09-12 08:33:04,495:INFO: ***** Running training *****
+2024-09-12 08:33:04,495:INFO:   Num examples = 180000
+2024-09-12 08:33:04,495:INFO:   Batch size = 128
+2024-09-12 08:33:04,496:INFO:   Num steps = 7030
+2024-09-12 08:34:32,996:INFO: Epoch: 1/5, Step: 50/1406, Lr: 0.000000007-0.000007112, Loss: 2.759015, Time/step: 1.769488
+2024-09-12 08:35:35,464:INFO: Epoch: 1/5, Step: 100/1406, Lr: 0.000000014-0.000014225, Loss: 2.676194, Time/step: 1.249339
+2024-09-12 08:36:37,738:INFO: Epoch: 1/5, Step: 150/1406, Lr: 0.000000021-0.000021337, Loss: 1.772774, Time/step: 1.245468
+2024-09-12 08:37:38,416:INFO: Epoch: 1/5, Step: 200/1406, Lr: 0.000000028-0.000028450, Loss: 0.750428, Time/step: 1.213538
+2024-09-12 08:38:38,094:INFO: Epoch: 1/5, Step: 250/1406, Lr: 0.000000036-0.000035562, Loss: 0.747424, Time/step: 1.193537
+2024-09-12 08:39:38,372:INFO: Epoch: 1/5, Step: 300/1406, Lr: 0.000000043-0.000042674, Loss: 0.516447, Time/step: 1.205537
+2024-09-12 08:40:38,008:INFO: Epoch: 1/5, Step: 350/1406, Lr: 0.000000050-0.000049787, Loss: 0.990043, Time/step: 1.192717
+2024-09-12 08:41:37,815:INFO: Epoch: 1/5, Step: 400/1406, Lr: 0.000000057-0.000056899, Loss: 0.334603, Time/step: 1.196104
+2024-09-12 08:42:36,993:INFO: Epoch: 1/5, Step: 450/1406, Lr: 0.000000064-0.000064011, Loss: 0.208773, Time/step: 1.183539
+2024-09-12 08:43:37,509:INFO: Epoch: 1/5, Step: 500/1406, Lr: 0.000000071-0.000071124, Loss: 0.214047, Time/step: 1.210296
+2024-09-12 08:44:37,402:INFO: Epoch: 1/5, Step: 550/1406, Lr: 0.000000078-0.000078236, Loss: 0.326928, Time/step: 1.197850
+2024-09-12 08:45:37,365:INFO: Epoch: 1/5, Step: 600/1406, Lr: 0.000000085-0.000085349, Loss: 0.626299, Time/step: 1.199242
+2024-09-12 08:46:36,854:INFO: Epoch: 1/5, Step: 650/1406, Lr: 0.000000092-0.000092461, Loss: 0.677721, Time/step: 1.189747
+2024-09-12 08:47:36,600:INFO: Epoch: 1/5, Step: 700/1406, Lr: 0.000000100-0.000099573, Loss: 0.489254, Time/step: 1.194910
+2024-09-12 08:48:36,813:INFO: Epoch: 1/5, Step: 750/1406, Lr: 0.000000097-0.000097218, Loss: 0.782920, Time/step: 1.204089
+2024-09-12 08:49:36,174:INFO: Epoch: 1/5, Step: 800/1406, Lr: 0.000000097-0.000096839, Loss: 0.357402, Time/step: 1.186796
+2024-09-12 08:50:35,606:INFO: Epoch: 1/5, Step: 850/1406, Lr: 0.000000096-0.000096436, Loss: 0.776773, Time/step: 1.188634
+2024-09-12 08:51:35,877:INFO: Epoch: 1/5, Step: 900/1406, Lr: 0.000000096-0.000096010, Loss: 0.666599, Time/step: 1.205407
+2024-09-12 08:52:35,858:INFO: Epoch: 1/5, Step: 950/1406, Lr: 0.000000096-0.000095561, Loss: 0.540596, Time/step: 1.199622
+2024-09-12 08:53:35,326:INFO: Epoch: 1/5, Step: 1000/1406, Lr: 0.000000095-0.000095090, Loss: 0.362817, Time/step: 1.189319
+2024-09-12 08:54:34,724:INFO: Epoch: 1/5, Step: 1050/1406, Lr: 0.000000095-0.000094596, Loss: 0.563225, Time/step: 1.187952
+2024-09-12 08:55:32,844:INFO: Epoch: 1/5, Step: 1100/1406, Lr: 0.000000094-0.000094080, Loss: 0.104553, Time/step: 1.162374
+2024-09-12 08:56:31,538:INFO: Epoch: 1/5, Step: 1150/1406, Lr: 0.000000094-0.000093541, Loss: 0.300299, Time/step: 1.173859
+2024-09-12 08:57:30,601:INFO: Epoch: 1/5, Step: 1200/1406, Lr: 0.000000093-0.000092981, Loss: 0.151262, Time/step: 1.181236
+2024-09-12 08:58:30,011:INFO: Epoch: 1/5, Step: 1250/1406, Lr: 0.000000092-0.000092400, Loss: 0.436625, Time/step: 1.187881
+2024-09-12 08:59:29,960:INFO: Epoch: 1/5, Step: 1300/1406, Lr: 0.000000092-0.000091797, Loss: 0.273868, Time/step: 1.198970
+2024-09-12 09:00:31,701:INFO: Epoch: 1/5, Step: 1350/1406, Lr: 0.000000091-0.000091174, Loss: 0.128855, Time/step: 1.234808
+2024-09-12 09:01:26,842:INFO: Epoch: 1/5, Step: 1400/1406, Lr: 0.000000091-0.000090530, Loss: 0.298793, Time/step: 1.102514
+2024-09-12 09:01:31,396:INFO: Epoch 1/5 Finished, Train Loss: 0.684467
+2024-09-12 09:01:41,089:INFO: Model saved to logs/msrvtt/tightTransf_vit32/pytorch_model.bin.0
+2024-09-12 09:01:41,089:INFO: Optimizer saved to logs/msrvtt/tightTransf_vit32/pytorch_opt.bin.0
+2024-09-12 09:01:41,098:WARNING: Eval under the multi-sentence per video clip setting.
+2024-09-12 09:01:41,109:WARNING: sentence num: 1000, video num: 1000
+2024-09-12 09:03:19,478:INFO: before reshape, sim matrix size: 1000 x 1000
+2024-09-12 09:03:19,495:INFO: after reshape, sim matrix size: 1000 x 1 x 1000
+2024-09-12 09:03:19,830:INFO: Text-to-Video:
+2024-09-12 09:03:19,830:INFO: 	>>>  R@1: 32.5 - R@5: 62.5 - R@10: 74.9 - Median R: 3.0 - Mean R: 17.9
+2024-09-12 09:03:19,830:INFO: Video-to-Text:
+2024-09-12 09:03:19,830:INFO: 	>>>  V2T$R@1: 33.0 - V2T$R@5: 64.4 - V2T$R@10: 76.4 - V2T$Median R: 3.0 - V2T$Mean R: 13.5
+2024-09-12 09:03:19,834:INFO: The best model is: logs/msrvtt/tightTransf_vit32/pytorch_model.bin.0, the R1 is: 32.5000
+2024-09-12 09:04:18,835:INFO: Epoch: 2/5, Step: 44/1406, Lr: 0.000000090-0.000089865, Loss: 0.205225, Time/step: 1.173661
+2024-09-12 09:05:23,359:INFO: Epoch: 2/5, Step: 94/1406, Lr: 0.000000089-0.000089181, Loss: 0.552767, Time/step: 1.290475
+2024-09-12 09:06:24,748:INFO: Epoch: 2/5, Step: 144/1406, Lr: 0.000000088-0.000088477, Loss: 0.130285, Time/step: 1.227768
+2024-09-12 09:07:24,554:INFO: Epoch: 2/5, Step: 194/1406, Lr: 0.000000088-0.000087754, Loss: 0.220871, Time/step: 1.196092
+2024-09-12 09:08:24,744:INFO: Epoch: 2/5, Step: 244/1406, Lr: 0.000000087-0.000087012, Loss: 0.227501, Time/step: 1.203780
+2024-09-12 09:09:25,082:INFO: Epoch: 2/5, Step: 294/1406, Lr: 0.000000086-0.000086252, Loss: 0.502439, Time/step: 1.206733
+2024-09-12 09:10:24,405:INFO: Epoch: 2/5, Step: 344/1406, Lr: 0.000000085-0.000085474, Loss: 0.215819, Time/step: 1.186455
+2024-09-12 09:11:25,089:INFO: Epoch: 2/5, Step: 394/1406, Lr: 0.000000085-0.000084678, Loss: 0.775419, Time/step: 1.213640
+2024-09-12 09:12:26,270:INFO: Epoch: 2/5, Step: 444/1406, Lr: 0.000000084-0.000083864, Loss: 0.197655, Time/step: 1.223618
+2024-09-12 09:13:26,637:INFO: Epoch: 2/5, Step: 494/1406, Lr: 0.000000083-0.000083034, Loss: 0.136471, Time/step: 1.207318
+2024-09-12 09:14:28,084:INFO: Epoch: 2/5, Step: 544/1406, Lr: 0.000000082-0.000082187, Loss: 0.002592, Time/step: 1.228697
+2024-09-12 09:15:28,516:INFO: Epoch: 2/5, Step: 594/1406, Lr: 0.000000081-0.000081324, Loss: 0.048262, Time/step: 1.208312
+2024-09-12 09:16:28,890:INFO: Epoch: 2/5, Step: 644/1406, Lr: 0.000000080-0.000080445, Loss: 0.221340, Time/step: 1.207467
+2024-09-12 09:17:29,646:INFO: Epoch: 2/5, Step: 694/1406, Lr: 0.000000080-0.000079552, Loss: 0.139942, Time/step: 1.215098
+2024-09-12 09:18:30,461:INFO: Epoch: 2/5, Step: 744/1406, Lr: 0.000000079-0.000078643, Loss: 0.161637, Time/step: 1.216282
+2024-09-12 09:19:30,759:INFO: Epoch: 2/5, Step: 794/1406, Lr: 0.000000078-0.000077720, Loss: 0.169616, Time/step: 1.205951
+2024-09-12 09:20:31,652:INFO: Epoch: 2/5, Step: 844/1406, Lr: 0.000000077-0.000076784, Loss: 0.201769, Time/step: 1.217841
+2024-09-12 09:21:32,566:INFO: Epoch: 2/5, Step: 894/1406, Lr: 0.000000076-0.000075834, Loss: 0.259570, Time/step: 1.218263
+2024-09-12 09:22:33,170:INFO: Epoch: 2/5, Step: 944/1406, Lr: 0.000000075-0.000074871, Loss: 0.154399, Time/step: 1.211901
+2024-09-12 09:23:33,749:INFO: Epoch: 2/5, Step: 994/1406, Lr: 0.000000074-0.000073896, Loss: 0.109837, Time/step: 1.211546
+2024-09-12 09:24:34,686:INFO: Epoch: 2/5, Step: 1044/1406, Lr: 0.000000073-0.000072908, Loss: 0.132500, Time/step: 1.218726
+2024-09-12 09:25:35,511:INFO: Epoch: 2/5, Step: 1094/1406, Lr: 0.000000072-0.000071910, Loss: 0.190669, Time/step: 1.216464
+2024-09-12 09:26:37,483:INFO: Epoch: 2/5, Step: 1144/1406, Lr: 0.000000071-0.000070900, Loss: 0.183762, Time/step: 1.239442
+2024-09-12 09:27:38,339:INFO: Epoch: 2/5, Step: 1194/1406, Lr: 0.000000070-0.000069880, Loss: 0.396692, Time/step: 1.217087
+2024-09-12 09:28:38,969:INFO: Epoch: 2/5, Step: 1244/1406, Lr: 0.000000069-0.000068850, Loss: 0.078266, Time/step: 1.212574
+2024-09-12 09:29:40,800:INFO: Epoch: 2/5, Step: 1294/1406, Lr: 0.000000068-0.000067811, Loss: 0.205590, Time/step: 1.236601
+2024-09-12 09:30:41,442:INFO: Epoch: 2/5, Step: 1344/1406, Lr: 0.000000067-0.000066762, Loss: 0.195000, Time/step: 1.212831
+2024-09-12 09:31:39,870:INFO: Epoch: 2/5, Step: 1394/1406, Lr: 0.000000066-0.000065706, Loss: 0.243331, Time/step: 1.168540
+2024-09-12 09:31:48,428:INFO: Epoch 2/5 Finished, Train Loss: 0.223068
+2024-09-12 09:32:04,382:INFO: Model saved to logs/msrvtt/tightTransf_vit32/pytorch_model.bin.1
+2024-09-12 09:32:04,383:INFO: Optimizer saved to logs/msrvtt/tightTransf_vit32/pytorch_opt.bin.1
+2024-09-12 09:32:04,392:WARNING: Eval under the multi-sentence per video clip setting.
+2024-09-12 09:32:04,393:WARNING: sentence num: 1000, video num: 1000
+2024-09-12 09:32:49,228:INFO: before reshape, sim matrix size: 1000 x 1000
+2024-09-12 09:32:49,245:INFO: after reshape, sim matrix size: 1000 x 1 x 1000
+2024-09-12 09:32:49,462:INFO: Text-to-Video:
+2024-09-12 09:32:49,463:INFO: 	>>>  R@1: 36.7 - R@5: 66.1 - R@10: 78.7 - Median R: 3.0 - Mean R: 14.4
+2024-09-12 09:32:49,463:INFO: Video-to-Text:
+2024-09-12 09:32:49,463:INFO: 	>>>  V2T$R@1: 37.9 - V2T$R@5: 67.4 - V2T$R@10: 79.3 - V2T$Median R: 2.0 - V2T$Mean R: 11.7
+2024-09-12 09:32:49,466:INFO: The best model is: logs/msrvtt/tightTransf_vit32/pytorch_model.bin.1, the R1 is: 36.7000
+2024-09-12 09:33:38,459:INFO: Epoch: 3/5, Step: 38/1406, Lr: 0.000000065-0.000064641, Loss: 0.064166, Time/step: 0.974108
+2024-09-12 09:34:37,390:INFO: Epoch: 3/5, Step: 88/1406, Lr: 0.000000064-0.000063569, Loss: 0.079765, Time/step: 1.178612
+2024-09-12 09:35:36,810:INFO: Epoch: 3/5, Step: 138/1406, Lr: 0.000000062-0.000062491, Loss: 0.018787, Time/step: 1.188358
+2024-09-12 09:36:35,627:INFO: Epoch: 3/5, Step: 188/1406, Lr: 0.000000061-0.000061406, Loss: 0.191708, Time/step: 1.176332
+2024-09-12 09:37:35,519:INFO: Epoch: 3/5, Step: 238/1406, Lr: 0.000000060-0.000060315, Loss: 0.097137, Time/step: 1.197824
+2024-09-12 09:38:35,199:INFO: Epoch: 3/5, Step: 288/1406, Lr: 0.000000059-0.000059220, Loss: 0.031197, Time/step: 1.193590
+2024-09-12 09:39:35,118:INFO: Epoch: 3/5, Step: 338/1406, Lr: 0.000000058-0.000058120, Loss: 0.001729, Time/step: 1.198182
+2024-09-12 09:40:34,005:INFO: Epoch: 3/5, Step: 388/1406, Lr: 0.000000057-0.000057015, Loss: 0.064960, Time/step: 1.177731
+2024-09-12 09:41:32,946:INFO: Epoch: 3/5, Step: 438/1406, Lr: 0.000000056-0.000055907, Loss: 0.377878, Time/step: 1.178801
+2024-09-12 09:42:32,060:INFO: Epoch: 3/5, Step: 488/1406, Lr: 0.000000055-0.000054797, Loss: 0.048938, Time/step: 1.182257
+2024-09-12 09:43:30,899:INFO: Epoch: 3/5, Step: 538/1406, Lr: 0.000000054-0.000053683, Loss: 0.178151, Time/step: 1.176588
+2024-09-12 09:44:29,343:INFO: Epoch: 3/5, Step: 588/1406, Lr: 0.000000053-0.000052568, Loss: 0.060255, Time/step: 1.168864
+2024-09-12 09:45:27,882:INFO: Epoch: 3/5, Step: 638/1406, Lr: 0.000000051-0.000051452, Loss: 0.122910, Time/step: 1.170782
+2024-09-12 09:46:26,708:INFO: Epoch: 3/5, Step: 688/1406, Lr: 0.000000050-0.000050335, Loss: 0.163409, Time/step: 1.176504
+2024-09-12 09:47:25,663:INFO: Epoch: 3/5, Step: 738/1406, Lr: 0.000000049-0.000049218, Loss: 0.118276, Time/step: 1.178844
+2024-09-12 09:48:25,056:INFO: Epoch: 3/5, Step: 788/1406, Lr: 0.000000048-0.000048101, Loss: 0.284047, Time/step: 1.187835
+2024-09-12 09:49:24,188:INFO: Epoch: 3/5, Step: 838/1406, Lr: 0.000000047-0.000046985, Loss: 0.670911, Time/step: 1.182637
+2024-09-12 09:50:26,333:INFO: Epoch: 3/5, Step: 888/1406, Lr: 0.000000046-0.000045871, Loss: 0.039738, Time/step: 1.242879
+2024-09-12 09:51:25,747:INFO: Epoch: 3/5, Step: 938/1406, Lr: 0.000000045-0.000044759, Loss: 0.277444, Time/step: 1.188260
+2024-09-12 09:52:24,269:INFO: Epoch: 3/5, Step: 988/1406, Lr: 0.000000044-0.000043649, Loss: 0.087093, Time/step: 1.170419
+2024-09-12 09:53:23,589:INFO: Epoch: 3/5, Step: 1038/1406, Lr: 0.000000043-0.000042543, Loss: 0.066477, Time/step: 1.186387
+2024-09-12 09:54:22,705:INFO: Epoch: 3/5, Step: 1088/1406, Lr: 0.000000041-0.000041440, Loss: 0.113498, Time/step: 1.182224
+2024-09-12 09:55:21,007:INFO: Epoch: 3/5, Step: 1138/1406, Lr: 0.000000040-0.000040341, Loss: 0.016792, Time/step: 1.166014
+2024-09-12 09:56:20,060:INFO: Epoch: 3/5, Step: 1188/1406, Lr: 0.000000039-0.000039248, Loss: 0.100596, Time/step: 1.181060
+2024-09-12 09:57:18,018:INFO: Epoch: 3/5, Step: 1238/1406, Lr: 0.000000038-0.000038159, Loss: 0.111459, Time/step: 1.159067
+2024-09-12 09:58:17,713:INFO: Epoch: 3/5, Step: 1288/1406, Lr: 0.000000037-0.000037077, Loss: 0.117324, Time/step: 1.193877
+2024-09-12 09:59:15,398:INFO: Epoch: 3/5, Step: 1338/1406, Lr: 0.000000036-0.000036001, Loss: 0.196588, Time/step: 1.153656
+2024-09-12 10:00:15,274:INFO: Epoch: 3/5, Step: 1388/1406, Lr: 0.000000035-0.000034932, Loss: 0.266628, Time/step: 1.197522
+2024-09-12 10:00:29,674:INFO: Epoch 3/5 Finished, Train Loss: 0.151110
+2024-09-12 10:00:39,072:INFO: Model saved to logs/msrvtt/tightTransf_vit32/pytorch_model.bin.2
+2024-09-12 10:00:39,075:INFO: Optimizer saved to logs/msrvtt/tightTransf_vit32/pytorch_opt.bin.2
+2024-09-12 10:00:39,093:WARNING: Eval under the multi-sentence per video clip setting.
+2024-09-12 10:00:39,093:WARNING: sentence num: 1000, video num: 1000
+2024-09-12 10:01:27,557:INFO: before reshape, sim matrix size: 1000 x 1000
+2024-09-12 10:01:27,573:INFO: after reshape, sim matrix size: 1000 x 1 x 1000
+2024-09-12 10:01:27,790:INFO: Text-to-Video:
+2024-09-12 10:01:27,790:INFO: 	>>>  R@1: 39.0 - R@5: 69.2 - R@10: 80.1 - Median R: 2.0 - Mean R: 13.1
+2024-09-12 10:01:27,790:INFO: Video-to-Text:
+2024-09-12 10:01:27,790:INFO: 	>>>  V2T$R@1: 38.9 - V2T$R@5: 69.3 - V2T$R@10: 79.6 - V2T$Median R: 2.0 - V2T$Mean R: 10.9
+2024-09-12 10:01:27,794:INFO: The best model is: logs/msrvtt/tightTransf_vit32/pytorch_model.bin.2, the R1 is: 39.0000
+2024-09-12 10:02:10,121:INFO: Epoch: 4/5, Step: 32/1406, Lr: 0.000000034-0.000033871, Loss: 0.006928, Time/step: 0.838015
+2024-09-12 10:03:10,038:INFO: Epoch: 4/5, Step: 82/1406, Lr: 0.000000033-0.000032817, Loss: 0.005163, Time/step: 1.198305
+2024-09-12 10:04:10,597:INFO: Epoch: 4/5, Step: 132/1406, Lr: 0.000000032-0.000031773, Loss: 0.344806, Time/step: 1.211159
+2024-09-12 10:05:09,496:INFO: Epoch: 4/5, Step: 182/1406, Lr: 0.000000031-0.000030737, Loss: 0.114028, Time/step: 1.177983
+2024-09-12 10:06:09,198:INFO: Epoch: 4/5, Step: 232/1406, Lr: 0.000000030-0.000029711, Loss: 0.120196, Time/step: 1.194023
+2024-09-12 10:07:10,086:INFO: Epoch: 4/5, Step: 282/1406, Lr: 0.000000029-0.000028695, Loss: 0.239012, Time/step: 1.217545
+2024-09-12 10:08:09,630:INFO: Epoch: 4/5, Step: 332/1406, Lr: 0.000000028-0.000027690, Loss: 0.309774, Time/step: 1.190871
+2024-09-12 10:09:09,712:INFO: Epoch: 4/5, Step: 382/1406, Lr: 0.000000027-0.000026695, Loss: 0.186624, Time/step: 1.201605
+2024-09-12 10:10:10,433:INFO: Epoch: 4/5, Step: 432/1406, Lr: 0.000000026-0.000025713, Loss: 0.003581, Time/step: 1.214251
+2024-09-12 10:11:11,190:INFO: Epoch: 4/5, Step: 482/1406, Lr: 0.000000025-0.000024742, Loss: 0.045636, Time/step: 1.215111
+2024-09-12 10:12:11,764:INFO: Epoch: 4/5, Step: 532/1406, Lr: 0.000000024-0.000023785, Loss: 0.003437, Time/step: 1.211469
+2024-09-12 10:13:12,781:INFO: Epoch: 4/5, Step: 582/1406, Lr: 0.000000023-0.000022840, Loss: 0.150732, Time/step: 1.220329
+2024-09-12 10:14:13,987:INFO: Epoch: 4/5, Step: 632/1406, Lr: 0.000000022-0.000021909, Loss: 0.109174, Time/step: 1.224104
+2024-09-12 10:15:14,964:INFO: Epoch: 4/5, Step: 682/1406, Lr: 0.000000021-0.000020992, Loss: 0.098110, Time/step: 1.219535
+2024-09-12 10:16:16,434:INFO: Epoch: 4/5, Step: 732/1406, Lr: 0.000000020-0.000020089, Loss: 0.028192, Time/step: 1.229218
+2024-09-12 10:17:17,360:INFO: Epoch: 4/5, Step: 782/1406, Lr: 0.000000019-0.000019201, Loss: 0.034831, Time/step: 1.218142
+2024-09-12 10:18:18,924:INFO: Epoch: 4/5, Step: 832/1406, Lr: 0.000000018-0.000018329, Loss: 0.010487, Time/step: 1.231263
+2024-09-12 10:19:19,585:INFO: Epoch: 4/5, Step: 882/1406, Lr: 0.000000017-0.000017472, Loss: 0.033189, Time/step: 1.213191
+2024-09-12 10:20:20,123:INFO: Epoch: 4/5, Step: 932/1406, Lr: 0.000000017-0.000016632, Loss: 0.037355, Time/step: 1.210714
+2024-09-12 10:21:20,065:INFO: Epoch: 4/5, Step: 982/1406, Lr: 0.000000016-0.000015808, Loss: 0.072659, Time/step: 1.198626
+2024-09-12 10:22:21,365:INFO: Epoch: 4/5, Step: 1032/1406, Lr: 0.000000015-0.000015002, Loss: 0.173743, Time/step: 1.225981
+2024-09-12 10:23:22,279:INFO: Epoch: 4/5, Step: 1082/1406, Lr: 0.000000014-0.000014213, Loss: 0.240017, Time/step: 1.218245
+2024-09-12 10:24:22,224:INFO: Epoch: 4/5, Step: 1132/1406, Lr: 0.000000013-0.000013442, Loss: 0.042271, Time/step: 1.198878
+2024-09-12 10:25:22,905:INFO: Epoch: 4/5, Step: 1182/1406, Lr: 0.000000013-0.000012689, Loss: 0.277398, Time/step: 1.213447
+2024-09-12 10:26:22,792:INFO: Epoch: 4/5, Step: 1232/1406, Lr: 0.000000012-0.000011954, Loss: 0.055727, Time/step: 1.197723
+2024-09-12 10:27:23,924:INFO: Epoch: 4/5, Step: 1282/1406, Lr: 0.000000011-0.000011239, Loss: 0.092295, Time/step: 1.222624
+2024-09-12 10:28:24,329:INFO: Epoch: 4/5, Step: 1332/1406, Lr: 0.000000011-0.000010543, Loss: 0.023282, Time/step: 1.207942
+2024-09-12 10:29:25,177:INFO: Epoch: 4/5, Step: 1382/1406, Lr: 0.000000010-0.000009867, Loss: 0.218354, Time/step: 1.216933
+2024-09-12 10:29:46,860:INFO: Epoch 4/5 Finished, Train Loss: 0.113856
+2024-09-12 10:29:52,982:INFO: Model saved to logs/msrvtt/tightTransf_vit32/pytorch_model.bin.3
+2024-09-12 10:29:52,983:INFO: Optimizer saved to logs/msrvtt/tightTransf_vit32/pytorch_opt.bin.3
+2024-09-12 10:29:53,005:WARNING: Eval under the multi-sentence per video clip setting.
+2024-09-12 10:29:53,005:WARNING: sentence num: 1000, video num: 1000
+2024-09-12 10:30:48,986:INFO: before reshape, sim matrix size: 1000 x 1000
+2024-09-12 10:30:49,009:INFO: after reshape, sim matrix size: 1000 x 1 x 1000
+2024-09-12 10:30:49,266:INFO: Text-to-Video:
+2024-09-12 10:30:49,267:INFO: 	>>>  R@1: 39.2 - R@5: 69.8 - R@10: 80.5 - Median R: 2.0 - Mean R: 13.5
+2024-09-12 10:30:49,267:INFO: Video-to-Text:
+2024-09-12 10:30:49,267:INFO: 	>>>  V2T$R@1: 39.2 - V2T$R@5: 69.1 - V2T$R@10: 79.2 - V2T$Median R: 2.0 - V2T$Mean R: 11.6
+2024-09-12 10:30:49,271:INFO: The best model is: logs/msrvtt/tightTransf_vit32/pytorch_model.bin.3, the R1 is: 39.2000
+2024-09-12 10:31:25,902:INFO: Epoch: 5/5, Step: 26/1406, Lr: 0.000000009-0.000009210, Loss: 0.084299, Time/step: 0.726555
+2024-09-12 10:32:27,123:INFO: Epoch: 5/5, Step: 76/1406, Lr: 0.000000009-0.000008575, Loss: 0.040816, Time/step: 1.224397
+2024-09-12 10:33:28,504:INFO: Epoch: 5/5, Step: 126/1406, Lr: 0.000000008-0.000007959, Loss: 0.184280, Time/step: 1.227428
+2024-09-12 10:34:28,323:INFO: Epoch: 5/5, Step: 176/1406, Lr: 0.000000007-0.000007365, Loss: 0.080580, Time/step: 1.196356
+2024-09-12 10:35:29,238:INFO: Epoch: 5/5, Step: 226/1406, Lr: 0.000000007-0.000006792, Loss: 0.003319, Time/step: 1.218284
+2024-09-12 10:36:30,174:INFO: Epoch: 5/5, Step: 276/1406, Lr: 0.000000006-0.000006241, Loss: 0.079537, Time/step: 1.218180
+2024-09-12 10:37:31,089:INFO: Epoch: 5/5, Step: 326/1406, Lr: 0.000000006-0.000005711, Loss: 0.002234, Time/step: 1.218269
+2024-09-12 10:38:31,568:INFO: Epoch: 5/5, Step: 376/1406, Lr: 0.000000005-0.000005204, Loss: 0.022308, Time/step: 1.209562
+2024-09-12 10:39:32,523:INFO: Epoch: 5/5, Step: 426/1406, Lr: 0.000000005-0.000004719, Loss: 0.179201, Time/step: 1.219087
+2024-09-12 10:40:32,739:INFO: Epoch: 5/5, Step: 476/1406, Lr: 0.000000004-0.000004256, Loss: 0.041387, Time/step: 1.204309
+2024-09-12 10:41:33,120:INFO: Epoch: 5/5, Step: 526/1406, Lr: 0.000000004-0.000003817, Loss: 0.021070, Time/step: 1.207592
+2024-09-12 10:42:33,903:INFO: Epoch: 5/5, Step: 576/1406, Lr: 0.000000003-0.000003400, Loss: 0.005696, Time/step: 1.215646
+2024-09-12 10:43:35,216:INFO: Epoch: 5/5, Step: 626/1406, Lr: 0.000000003-0.000003007, Loss: 0.004745, Time/step: 1.226224
+2024-09-12 10:44:37,098:INFO: Epoch: 5/5, Step: 676/1406, Lr: 0.000000003-0.000002637, Loss: 0.086471, Time/step: 1.237444
+2024-09-12 10:45:38,726:INFO: Epoch: 5/5, Step: 726/1406, Lr: 0.000000002-0.000002291, Loss: 0.012967, Time/step: 1.232531
+2024-09-12 10:46:39,524:INFO: Epoch: 5/5, Step: 776/1406, Lr: 0.000000002-0.000001969, Loss: 0.220885, Time/step: 1.215949
+2024-09-12 10:47:41,099:INFO: Epoch: 5/5, Step: 826/1406, Lr: 0.000000002-0.000001670, Loss: 0.056817, Time/step: 1.231412
+2024-09-12 10:48:42,323:INFO: Epoch: 5/5, Step: 876/1406, Lr: 0.000000001-0.000001396, Loss: 0.011514, Time/step: 1.224464
+2024-09-12 10:49:43,470:INFO: Epoch: 5/5, Step: 926/1406, Lr: 0.000000001-0.000001146, Loss: 0.082173, Time/step: 1.222937
+2024-09-12 10:50:44,782:INFO: Epoch: 5/5, Step: 976/1406, Lr: 0.000000001-0.000000920, Loss: 0.060817, Time/step: 1.225978
+2024-09-12 10:51:47,099:INFO: Epoch: 5/5, Step: 1026/1406, Lr: 0.000000001-0.000000719, Loss: 0.064512, Time/step: 1.246302
+2024-09-12 10:52:48,194:INFO: Epoch: 5/5, Step: 1076/1406, Lr: 0.000000001-0.000000543, Loss: 0.005642, Time/step: 1.221710
+2024-09-12 10:53:50,230:INFO: Epoch: 5/5, Step: 1126/1406, Lr: 0.000000000-0.000000391, Loss: 0.011534, Time/step: 1.240594
+2024-09-12 10:54:50,555:INFO: Epoch: 5/5, Step: 1176/1406, Lr: 0.000000000-0.000000264, Loss: 0.321181, Time/step: 1.206275
+2024-09-12 10:55:51,486:INFO: Epoch: 5/5, Step: 1226/1406, Lr: 0.000000000-0.000000162, Loss: 0.015987, Time/step: 1.218585
+2024-09-12 10:56:52,791:INFO: Epoch: 5/5, Step: 1276/1406, Lr: 0.000000000-0.000000084, Loss: 0.039259, Time/step: 1.226087
+2024-09-12 10:57:53,507:INFO: Epoch: 5/5, Step: 1326/1406, Lr: 0.000000000-0.000000032, Loss: 0.344365, Time/step: 1.214298
+2024-09-12 10:58:53,615:INFO: Epoch: 5/5, Step: 1376/1406, Lr: 0.000000000-0.000000004, Loss: 0.192209, Time/step: 1.202152
+2024-09-12 10:59:22,674:INFO: Epoch 5/5 Finished, Train Loss: 0.097266
+2024-09-12 10:59:24,847:INFO: Model saved to logs/msrvtt/tightTransf_vit32/pytorch_model.bin.4
+2024-09-12 10:59:24,847:INFO: Optimizer saved to logs/msrvtt/tightTransf_vit32/pytorch_opt.bin.4
+2024-09-12 10:59:24,853:WARNING: Eval under the multi-sentence per video clip setting.
+2024-09-12 10:59:24,853:WARNING: sentence num: 1000, video num: 1000
+2024-09-12 11:00:11,189:INFO: before reshape, sim matrix size: 1000 x 1000
+2024-09-12 11:00:11,214:INFO: after reshape, sim matrix size: 1000 x 1 x 1000
+2024-09-12 11:00:11,504:INFO: Text-to-Video:
+2024-09-12 11:00:11,504:INFO: 	>>>  R@1: 39.1 - R@5: 70.3 - R@10: 80.0 - Median R: 2.0 - Mean R: 14.1
+2024-09-12 11:00:11,504:INFO: Video-to-Text:
+2024-09-12 11:00:11,504:INFO: 	>>>  V2T$R@1: 39.6 - V2T$R@5: 69.4 - V2T$R@10: 78.3 - V2T$Median R: 2.0 - V2T$Mean R: 12.9
+2024-09-12 11:00:11,509:INFO: The best model is: logs/msrvtt/tightTransf_vit32/pytorch_model.bin.3, the R1 is: 39.2000
