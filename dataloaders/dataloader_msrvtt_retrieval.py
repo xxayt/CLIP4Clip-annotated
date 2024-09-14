@@ -138,8 +138,6 @@ class MSRVTT_DataLoader(Dataset):
 
 
 
-
-
 class MSRVTT_TrainDataLoader(Dataset):
     """MSRVTT train dataset loader."""
     def __init__(
@@ -204,7 +202,7 @@ class MSRVTT_TrainDataLoader(Dataset):
                 self.parent_ids[vid] = url_posfix
                 self.children_video_ids[url_posfix].append(vid)
             self.sample_len = len(self.csv)  # sample number = video number，总计9k/7k条video_id
-        
+
         self.rawVideoExtractor = RawVideoExtractor(framerate=feature_framerate, size=image_resolution)
         self.SPECIAL_TOKEN = {"CLS_TOKEN": "<|startoftext|>", "SEP_TOKEN": "<|endoftext|>",
                               "MASK_TOKEN": "[MASK]", "UNK_TOKEN": "[UNK]", "PAD_TOKEN": "[PAD]"}
@@ -212,9 +210,8 @@ class MSRVTT_TrainDataLoader(Dataset):
     def __len__(self):
         return self.sample_len
 
+    # 给定video_id和caption，返回对应的caption文本的token id、mask、segment id、video_id
     def _get_text(self, video_id, caption=None):
-        ''' 给定video_id和caption，返回对应的caption文本的token id、mask、segment id、video_id
-        '''
         k = 1
         choice_video_ids = [video_id]
         pairs_text = np.zeros((k, self.max_words), dtype=np.long)
@@ -233,17 +230,16 @@ class MSRVTT_TrainDataLoader(Dataset):
                 words = words[:total_length_with_CLS]
             words = words + [self.SPECIAL_TOKEN["SEP_TOKEN"]]
 
-            input_ids = self.tokenizer.convert_tokens_to_ids(words)
+            input_ids = self.tokenizer.convert_tokens_to_ids(words)  # token id list
             input_mask = [1] * len(input_ids)
             segment_ids = [0] * len(input_ids)
             while len(input_ids) < self.max_words:
                 input_ids.append(0)
                 input_mask.append(0)
                 segment_ids.append(0)
-            assert len(input_ids) == self.max_words
-            assert len(input_mask) == self.max_words
-            assert len(segment_ids) == self.max_words
-
+            assert len(input_ids) == self.max_words  # eg: [4233, 40114, 33139, 779, 320, 886, 6332, 633, 518, 0, 0, 0]
+            assert len(input_mask) == self.max_words  # eg: [1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0]
+            assert len(segment_ids) == self.max_words  # 相当于 [0] * max_words
             pairs_text[i] = np.array(input_ids)
             pairs_mask[i] = np.array(input_mask)
             pairs_segment[i] = np.array(segment_ids)
@@ -257,12 +253,10 @@ class MSRVTT_TrainDataLoader(Dataset):
         return words
 
     def _get_rawvideo(self, choice_video_ids):
-        video_mask = np.zeros((len(choice_video_ids), self.max_frames), dtype=np.long)
-        max_video_length = [0] * len(choice_video_ids)
-
+        video_mask = np.zeros((len(choice_video_ids), self.max_frames), dtype=np.long)  # 记录有效帧长度 eg: [1, 12]
+        max_video_length = [0] * len(choice_video_ids)  # 记录实际帧长度
         # Pair x L x T x 3 x H x W
-        video = np.zeros((len(choice_video_ids), self.max_frames, 1, 3,
-                          self.rawVideoExtractor.size, self.rawVideoExtractor.size), dtype=np.float)
+        video = np.zeros((len(choice_video_ids), self.max_frames, 1, 3, self.rawVideoExtractor.size, self.rawVideoExtractor.size), dtype=np.float)  # 记录视频特征
 
         for i, video_id in enumerate(choice_video_ids):
             # Individual for YoucokII dataset, due to it video format
@@ -274,21 +268,19 @@ class MSRVTT_TrainDataLoader(Dataset):
             raw_video_data = raw_video_data['video']
             if len(raw_video_data.shape) > 3:
                 raw_video_data_clip = raw_video_data
-                # L x T x 3 x H x W
+                # L x T x 3 x H x W （L=12, T=1）
                 raw_video_slice = self.rawVideoExtractor.process_raw_data(raw_video_data_clip)
                 if self.max_frames < raw_video_slice.shape[0]:
                     if self.slice_framepos == 0:
                         video_slice = raw_video_slice[:self.max_frames, ...]
                     elif self.slice_framepos == 1:
                         video_slice = raw_video_slice[-self.max_frames:, ...]
-                    else:
+                    else:  # uniformly extract frames
                         sample_indx = np.linspace(0, raw_video_slice.shape[0] - 1, num=self.max_frames, dtype=int)
                         video_slice = raw_video_slice[sample_indx, ...]
                 else:
                     video_slice = raw_video_slice
-
                 video_slice = self.rawVideoExtractor.process_frame_order(video_slice, frame_order=self.frame_order)
-
                 slice_len = video_slice.shape[0]
                 max_video_length[i] = max_video_length[i] if max_video_length[i] > slice_len else slice_len
                 if slice_len < 1:
@@ -300,8 +292,7 @@ class MSRVTT_TrainDataLoader(Dataset):
 
         for i, v_length in enumerate(max_video_length):
             video_mask[i][:v_length] = [1] * v_length
-
-        return video, video_mask
+        return video, video_mask  # [1, 12, 1, 3, 224, 224], [1, 12]
 
     def __getitem__(self, idx):
         if self.unfold_sentences:

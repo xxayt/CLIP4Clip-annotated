@@ -1,0 +1,210 @@
+2024-09-13 19:48:22,884:INFO: device: cuda:1 n_gpu: 4
+2024-09-13 19:48:22,895:INFO: Effective parameters:
+2024-09-13 19:48:22,896:INFO:   <<< batch_size: 128
+2024-09-13 19:48:22,896:INFO:   <<< batch_size_val: 16
+2024-09-13 19:48:22,896:INFO:   <<< cache_dir: 
+2024-09-13 19:48:22,896:INFO:   <<< coef_lr: 0.001
+2024-09-13 19:48:22,896:INFO:   <<< cross_model: cross-base
+2024-09-13 19:48:22,896:INFO:   <<< cross_num_hidden_layers: 4
+2024-09-13 19:48:22,896:INFO:   <<< data_path: /home/xinzijie/Projects/CLIP4Clip-annotated/datasets/msvd_data_origin
+2024-09-13 19:48:22,896:INFO:   <<< datatype: msvd
+2024-09-13 19:48:22,896:INFO:   <<< do_eval: False
+2024-09-13 19:48:22,896:INFO:   <<< do_lower_case: False
+2024-09-13 19:48:22,896:INFO:   <<< do_pretrain: False
+2024-09-13 19:48:22,897:INFO:   <<< do_train: True
+2024-09-13 19:48:22,897:INFO:   <<< epochs: 5
+2024-09-13 19:48:22,897:INFO:   <<< eval_frame_order: 0
+2024-09-13 19:48:22,897:INFO:   <<< expand_msrvtt_sentences: False
+2024-09-13 19:48:22,897:INFO:   <<< feature_framerate: 1
+2024-09-13 19:48:22,897:INFO:   <<< features_path: /home/xinzijie/VisualSearch/msvd/ImageData
+2024-09-13 19:48:22,897:INFO:   <<< fp16: False
+2024-09-13 19:48:22,897:INFO:   <<< fp16_opt_level: O1
+2024-09-13 19:48:22,897:INFO:   <<< freeze_layer_num: 0
+2024-09-13 19:48:22,897:INFO:   <<< gradient_accumulation_steps: 1
+2024-09-13 19:48:22,897:INFO: device: cuda:2 n_gpu: 4
+2024-09-13 19:48:22,897:INFO:   <<< hard_negative_rate: 0.5
+2024-09-13 19:48:22,897:INFO: device: cuda:3 n_gpu: 4
+2024-09-13 19:48:22,897:INFO:   <<< init_model: None
+2024-09-13 19:48:22,897:INFO:   <<< linear_patch: 2d
+2024-09-13 19:48:22,898:INFO:   <<< local_rank: 0
+2024-09-13 19:48:22,898:INFO:   <<< loose_type: True
+2024-09-13 19:48:22,898:INFO:   <<< lr: 0.0001
+2024-09-13 19:48:22,898:INFO:   <<< lr_decay: 0.9
+2024-09-13 19:48:22,898:INFO:   <<< margin: 0.1
+2024-09-13 19:48:22,898:INFO:   <<< max_frames: 12
+2024-09-13 19:48:22,898:INFO:   <<< max_words: 32
+2024-09-13 19:48:22,898:INFO:   <<< n_display: 50
+2024-09-13 19:48:22,898:INFO:   <<< n_gpu: 1
+2024-09-13 19:48:22,898:INFO:   <<< n_pair: 1
+2024-09-13 19:48:22,898:INFO:   <<< name: seqLSTM_vit32
+2024-09-13 19:48:22,898:INFO:   <<< negative_weighting: 1
+2024-09-13 19:48:22,898:INFO:   <<< num_thread_reader: 8
+2024-09-13 19:48:22,899:INFO:   <<< output_dir: logs
+2024-09-13 19:48:22,899:INFO:   <<< path_log: logs/msvd/seqLSTM_vit32
+2024-09-13 19:48:22,899:INFO:   <<< pretrained_clip_name: ViT-B/32
+2024-09-13 19:48:22,899:INFO:   <<< rank: 0
+2024-09-13 19:48:22,899:INFO:   <<< resume_model: None
+2024-09-13 19:48:22,899:INFO:   <<< sampled_use_mil: False
+2024-09-13 19:48:22,899:INFO:   <<< seed: 42
+2024-09-13 19:48:22,899:INFO:   <<< sim_header: seqLSTM
+2024-09-13 19:48:22,899:INFO:   <<< slice_framepos: 2
+2024-09-13 19:48:22,899:INFO:   <<< task_type: retrieval
+2024-09-13 19:48:22,899:INFO:   <<< text_num_hidden_layers: 12
+2024-09-13 19:48:22,899:INFO:   <<< train_csv: data/.train.csv
+2024-09-13 19:48:22,899:INFO:   <<< train_frame_order: 0
+2024-09-13 19:48:22,900:INFO:   <<< use_mil: False
+2024-09-13 19:48:22,900:INFO:   <<< val_csv: data/.val.csv
+2024-09-13 19:48:22,900:INFO:   <<< video_dim: 1024
+2024-09-13 19:48:22,900:INFO:   <<< visual_num_hidden_layers: 12
+2024-09-13 19:48:22,900:INFO:   <<< warmup_proportion: 0.1
+2024-09-13 19:48:22,900:INFO:   <<< world_size: 4
+2024-09-13 19:48:22,900:INFO: device: cuda:0 n_gpu: 4
+2024-09-13 19:48:25,274:INFO: loading archive file /data3/xinzijie/Projects/CLIP4Clip-annotated/modules/cross-base
+2024-09-13 19:48:25,274:INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 512,
+  "initializer_range": 0.02,
+  "intermediate_size": 2048,
+  "max_position_embeddings": 128,
+  "num_attention_heads": 8,
+  "num_hidden_layers": 4,
+  "type_vocab_size": 2,
+  "vocab_size": 512
+}
+
+2024-09-13 19:48:25,274:INFO: Weight doesn't exsits. /data3/xinzijie/Projects/CLIP4Clip-annotated/modules/cross-base/cross_pytorch_model.bin
+2024-09-13 19:48:25,274:WARNING: Stage-One:True, Stage-Two:False
+2024-09-13 19:48:25,275:WARNING: Test retrieval by loose type.
+2024-09-13 19:48:25,275:WARNING: 	 embed_dim: 512
+2024-09-13 19:48:25,275:WARNING: 	 image_resolution: 224
+2024-09-13 19:48:25,275:WARNING: 	 vision_layers: 12
+2024-09-13 19:48:25,275:WARNING: 	 vision_width: 768
+2024-09-13 19:48:25,275:WARNING: 	 vision_patch_size: 32
+2024-09-13 19:48:25,275:WARNING: 	 context_length: 77
+2024-09-13 19:48:25,275:WARNING: 	 vocab_size: 49408
+2024-09-13 19:48:25,275:WARNING: 	 transformer_width: 512
+2024-09-13 19:48:25,275:WARNING: 	 transformer_heads: 8
+2024-09-13 19:48:25,275:WARNING: 	 transformer_layers: 12
+2024-09-13 19:48:25,275:WARNING: 		 linear_patch: 2d
+2024-09-13 19:48:25,275:WARNING: 	 cut_top_layer: 0
+2024-09-13 19:48:27,181:WARNING: 	 sim_header: seqLSTM
+2024-09-13 19:48:31,698:INFO: --------------------
+2024-09-13 19:48:31,699:INFO: Weights of CLIP4Clip not initialized from pretrained model: 
+   lstm_visual.weight_ih_l0
+   lstm_visual.weight_hh_l0
+   lstm_visual.bias_ih_l0
+   lstm_visual.bias_hh_l0
+2024-09-13 19:48:31,699:INFO: Weights from pretrained model not used in CLIP4Clip: 
+   clip.input_resolution
+   clip.context_length
+   clip.vocab_size
+2024-09-13 19:48:36,215:INFO: ***** Running test *****
+2024-09-13 19:48:36,215:INFO:   Num examples = 27763
+2024-09-13 19:48:36,215:INFO:   Batch size = 16
+2024-09-13 19:48:36,215:INFO:   Num steps = 1736
+2024-09-13 19:48:36,215:INFO: ***** Running val *****
+2024-09-13 19:48:36,215:INFO:   Num examples = 4290
+2024-09-13 19:48:36,913:INFO: ***** Running training *****
+2024-09-13 19:48:36,914:INFO:   Num examples = 48774
+2024-09-13 19:48:36,914:INFO:   Batch size = 128
+2024-09-13 19:48:36,914:INFO:   Num steps = 1905
+2024-09-13 19:49:50,779:INFO: Epoch: 1/5, Step: 50/381, Lr: 0.000000026-0.000026247, Loss: 1.315274, Time/step: 1.476215
+2024-09-13 19:50:41,884:INFO: Epoch: 1/5, Step: 100/381, Lr: 0.000000052-0.000052493, Loss: 0.943609, Time/step: 1.022089
+2024-09-13 19:51:31,800:INFO: Epoch: 1/5, Step: 150/381, Lr: 0.000000079-0.000078740, Loss: 0.808745, Time/step: 0.998311
+2024-09-13 19:52:26,134:INFO: Epoch: 1/5, Step: 200/381, Lr: 0.000000097-0.000097305, Loss: 0.709949, Time/step: 1.086665
+2024-09-13 19:53:20,490:INFO: Epoch: 1/5, Step: 250/381, Lr: 0.000000096-0.000095810, Loss: 0.420998, Time/step: 1.087110
+2024-09-13 19:54:13,456:INFO: Epoch: 1/5, Step: 300/381, Lr: 0.000000094-0.000094005, Loss: 0.558325, Time/step: 1.059307
+2024-09-13 19:55:04,780:INFO: Epoch: 1/5, Step: 350/381, Lr: 0.000000092-0.000091900, Loss: 0.570251, Time/step: 1.026444
+2024-09-13 19:55:34,106:INFO: Epoch 1/5 Finished, Train Loss: 0.892057
+2024-09-13 19:55:36,294:INFO: Model saved to logs/msvd/seqLSTM_vit32/pytorch_model.bin.0
+2024-09-13 19:55:36,295:INFO: Optimizer saved to logs/msvd/seqLSTM_vit32/pytorch_opt.bin.0
+2024-09-13 19:55:36,301:WARNING: Eval under the multi-sentence per video clip setting.
+2024-09-13 19:55:36,302:WARNING: sentence num: 27763, video num: 670
+2024-09-13 20:49:38,845:INFO: before reshape, sim matrix size: 27763 x 670
+2024-09-13 20:49:39,133:INFO: after reshape, sim matrix size: 670 x 81 x 670
+2024-09-13 20:49:43,119:INFO: Text-to-Video:
+2024-09-13 20:49:43,119:INFO: 	>>>  R@1: 45.7 - R@5: 74.4 - R@10: 83.7 - Median R: 2.0 - Mean R: 10.3
+2024-09-13 20:49:43,119:INFO: Video-to-Text:
+2024-09-13 20:49:43,119:INFO: 	>>>  V2T$R@1: 57.5 - V2T$R@5: 79.9 - V2T$R@10: 85.0 - V2T$Median R: 1.0 - V2T$Mean R: 7.9
+2024-09-13 20:49:43,140:INFO: The best model is: logs/msvd/seqLSTM_vit32/pytorch_model.bin.0, the R1 is: 45.6795
+2024-09-13 20:50:07,165:INFO: Epoch: 2/5, Step: 19/381, Lr: 0.000000090-0.000089510, Loss: 0.490456, Time/step: 0.476515
+2024-09-13 20:50:55,832:INFO: Epoch: 2/5, Step: 69/381, Lr: 0.000000087-0.000086852, Loss: 0.556252, Time/step: 0.973332
+2024-09-13 20:51:44,470:INFO: Epoch: 2/5, Step: 119/381, Lr: 0.000000084-0.000083944, Loss: 0.567093, Time/step: 0.972748
+2024-09-13 20:52:33,765:INFO: Epoch: 2/5, Step: 169/381, Lr: 0.000000081-0.000080805, Loss: 0.602355, Time/step: 0.985893
+2024-09-13 20:53:22,463:INFO: Epoch: 2/5, Step: 219/381, Lr: 0.000000077-0.000077456, Loss: 0.490779, Time/step: 0.973961
+2024-09-13 20:54:11,264:INFO: Epoch: 2/5, Step: 269/381, Lr: 0.000000074-0.000073921, Loss: 0.515629, Time/step: 0.976002
+2024-09-13 20:55:00,000:INFO: Epoch: 2/5, Step: 319/381, Lr: 0.000000070-0.000070224, Loss: 0.515233, Time/step: 0.974711
+2024-09-13 20:55:49,168:INFO: Epoch: 2/5, Step: 369/381, Lr: 0.000000066-0.000066389, Loss: 0.484910, Time/step: 0.983337
+2024-09-13 20:55:59,730:INFO: Epoch 2/5 Finished, Train Loss: 0.524520
+2024-09-13 20:56:02,176:INFO: Model saved to logs/msvd/seqLSTM_vit32/pytorch_model.bin.1
+2024-09-13 20:56:02,177:INFO: Optimizer saved to logs/msvd/seqLSTM_vit32/pytorch_opt.bin.1
+2024-09-13 20:56:02,185:WARNING: Eval under the multi-sentence per video clip setting.
+2024-09-13 20:56:02,186:WARNING: sentence num: 27763, video num: 670
+2024-09-13 21:49:30,124:INFO: before reshape, sim matrix size: 27763 x 670
+2024-09-13 21:49:30,631:INFO: after reshape, sim matrix size: 670 x 81 x 670
+2024-09-13 21:49:34,760:INFO: Text-to-Video:
+2024-09-13 21:49:34,761:INFO: 	>>>  R@1: 44.7 - R@5: 74.4 - R@10: 83.5 - Median R: 2.0 - Mean R: 10.3
+2024-09-13 21:49:34,761:INFO: Video-to-Text:
+2024-09-13 21:49:34,761:INFO: 	>>>  V2T$R@1: 52.7 - V2T$R@5: 74.9 - V2T$R@10: 81.0 - V2T$Median R: 1.0 - V2T$Mean R: 11.8
+2024-09-13 21:49:34,796:INFO: The best model is: logs/msvd/seqLSTM_vit32/pytorch_model.bin.0, the R1 is: 45.6795
+2024-09-13 21:50:17,236:INFO: Epoch: 3/5, Step: 38/381, Lr: 0.000000062-0.000062442, Loss: 0.460232, Time/step: 0.844804
+2024-09-13 21:51:05,114:INFO: Epoch: 3/5, Step: 88/381, Lr: 0.000000058-0.000058412, Loss: 0.401383, Time/step: 0.957541
+2024-09-13 21:51:52,869:INFO: Epoch: 3/5, Step: 138/381, Lr: 0.000000054-0.000054324, Loss: 0.443639, Time/step: 0.955078
+2024-09-13 21:52:40,612:INFO: Epoch: 3/5, Step: 188/381, Lr: 0.000000050-0.000050206, Loss: 0.466404, Time/step: 0.954843
+2024-09-13 21:53:28,863:INFO: Epoch: 3/5, Step: 238/381, Lr: 0.000000046-0.000046087, Loss: 0.445767, Time/step: 0.965010
+2024-09-13 21:54:17,716:INFO: Epoch: 3/5, Step: 288/381, Lr: 0.000000042-0.000041995, Loss: 0.342770, Time/step: 0.977067
+2024-09-13 21:55:06,157:INFO: Epoch: 3/5, Step: 338/381, Lr: 0.000000038-0.000037957, Loss: 0.326284, Time/step: 0.968808
+2024-09-13 21:55:45,491:INFO: Epoch 3/5 Finished, Train Loss: 0.414065
+2024-09-13 21:55:47,464:INFO: Model saved to logs/msvd/seqLSTM_vit32/pytorch_model.bin.2
+2024-09-13 21:55:47,465:INFO: Optimizer saved to logs/msvd/seqLSTM_vit32/pytorch_opt.bin.2
+2024-09-13 21:55:47,471:WARNING: Eval under the multi-sentence per video clip setting.
+2024-09-13 21:55:47,471:WARNING: sentence num: 27763, video num: 670
+2024-09-13 22:49:32,855:INFO: before reshape, sim matrix size: 27763 x 670
+2024-09-13 22:49:35,079:INFO: after reshape, sim matrix size: 670 x 81 x 670
+2024-09-13 22:49:39,032:INFO: Text-to-Video:
+2024-09-13 22:49:39,032:INFO: 	>>>  R@1: 45.2 - R@5: 74.5 - R@10: 83.7 - Median R: 2.0 - Mean R: 10.2
+2024-09-13 22:49:39,032:INFO: Video-to-Text:
+2024-09-13 22:49:39,032:INFO: 	>>>  V2T$R@1: 48.8 - V2T$R@5: 69.7 - V2T$R@10: 74.8 - V2T$Median R: 2.0 - V2T$Mean R: 16.2
+2024-09-13 22:49:39,068:INFO: The best model is: logs/msvd/seqLSTM_vit32/pytorch_model.bin.0, the R1 is: 45.6795
+2024-09-13 22:49:56,302:INFO: Epoch: 4/5, Step: 7/381, Lr: 0.000000034-0.000034001, Loss: 0.250118, Time/step: 0.340679
+2024-09-13 22:50:45,658:INFO: Epoch: 4/5, Step: 57/381, Lr: 0.000000030-0.000030154, Loss: 0.379109, Time/step: 0.987110
+2024-09-13 22:51:34,254:INFO: Epoch: 4/5, Step: 107/381, Lr: 0.000000026-0.000026442, Loss: 0.304825, Time/step: 0.971896
+2024-09-13 22:52:23,182:INFO: Epoch: 4/5, Step: 157/381, Lr: 0.000000023-0.000022889, Loss: 0.464545, Time/step: 0.978540
+2024-09-13 22:53:12,438:INFO: Epoch: 4/5, Step: 207/381, Lr: 0.000000020-0.000019521, Loss: 0.407714, Time/step: 0.985106
+2024-09-13 22:54:01,675:INFO: Epoch: 4/5, Step: 257/381, Lr: 0.000000016-0.000016360, Loss: 0.375164, Time/step: 0.984731
+2024-09-13 22:54:51,544:INFO: Epoch: 4/5, Step: 307/381, Lr: 0.000000013-0.000013428, Loss: 0.315649, Time/step: 0.997374
+2024-09-13 22:55:41,261:INFO: Epoch: 4/5, Step: 357/381, Lr: 0.000000011-0.000010744, Loss: 0.324229, Time/step: 0.994318
+2024-09-13 22:56:02,878:INFO: Epoch 4/5 Finished, Train Loss: 0.348970
+2024-09-13 22:56:05,630:INFO: Model saved to logs/msvd/seqLSTM_vit32/pytorch_model.bin.3
+2024-09-13 22:56:05,631:INFO: Optimizer saved to logs/msvd/seqLSTM_vit32/pytorch_opt.bin.3
+2024-09-13 22:56:05,640:WARNING: Eval under the multi-sentence per video clip setting.
+2024-09-13 22:56:05,641:WARNING: sentence num: 27763, video num: 670
+2024-09-14 00:00:10,231:INFO: before reshape, sim matrix size: 27763 x 670
+2024-09-14 00:00:23,954:INFO: after reshape, sim matrix size: 670 x 81 x 670
+2024-09-14 00:00:30,241:INFO: Text-to-Video:
+2024-09-14 00:00:30,242:INFO: 	>>>  R@1: 45.1 - R@5: 74.3 - R@10: 83.6 - Median R: 2.0 - Mean R: 10.4
+2024-09-14 00:00:30,242:INFO: Video-to-Text:
+2024-09-14 00:00:30,242:INFO: 	>>>  V2T$R@1: 42.4 - V2T$R@5: 61.5 - V2T$R@10: 64.9 - V2T$Median R: 2.0 - V2T$Mean R: 20.3
+2024-09-14 00:00:30,277:INFO: The best model is: logs/msvd/seqLSTM_vit32/pytorch_model.bin.0, the R1 is: 45.6795
+2024-09-14 00:01:20,017:INFO: Epoch: 5/5, Step: 26/381, Lr: 0.000000008-0.000008327, Loss: 0.211335, Time/step: 0.989804
+2024-09-14 00:02:20,039:INFO: Epoch: 5/5, Step: 76/381, Lr: 0.000000006-0.000006193, Loss: 0.284962, Time/step: 1.200406
+2024-09-14 00:03:21,642:INFO: Epoch: 5/5, Step: 126/381, Lr: 0.000000004-0.000004356, Loss: 0.313764, Time/step: 1.232054
+2024-09-14 00:04:23,549:INFO: Epoch: 5/5, Step: 176/381, Lr: 0.000000003-0.000002830, Loss: 0.398017, Time/step: 1.238129
+2024-09-14 00:05:25,115:INFO: Epoch: 5/5, Step: 226/381, Lr: 0.000000002-0.000001625, Loss: 0.358765, Time/step: 1.231291
+2024-09-14 00:06:26,552:INFO: Epoch: 5/5, Step: 276/381, Lr: 0.000000001-0.000000748, Loss: 0.310050, Time/step: 1.228726
+2024-09-14 00:07:26,725:INFO: Epoch: 5/5, Step: 326/381, Lr: 0.000000000-0.000000206, Loss: 0.343833, Time/step: 1.203449
+2024-09-14 00:08:26,985:INFO: Epoch: 5/5, Step: 376/381, Lr: 0.000000000-0.000000002, Loss: 0.321824, Time/step: 1.205183
+2024-09-14 00:08:33,337:INFO: Epoch 5/5 Finished, Train Loss: 0.336755
+2024-09-14 00:08:35,871:INFO: Model saved to logs/msvd/seqLSTM_vit32/pytorch_model.bin.4
+2024-09-14 00:08:35,872:INFO: Optimizer saved to logs/msvd/seqLSTM_vit32/pytorch_opt.bin.4
+2024-09-14 00:08:35,877:WARNING: Eval under the multi-sentence per video clip setting.
+2024-09-14 00:08:35,877:WARNING: sentence num: 27763, video num: 670
+2024-09-14 00:44:56,479:INFO: before reshape, sim matrix size: 27763 x 670
+2024-09-14 00:44:56,945:INFO: after reshape, sim matrix size: 670 x 81 x 670
+2024-09-14 00:45:03,143:INFO: Text-to-Video:
+2024-09-14 00:45:03,143:INFO: 	>>>  R@1: 45.0 - R@5: 74.3 - R@10: 83.6 - Median R: 2.0 - Mean R: 10.4
+2024-09-14 00:45:03,144:INFO: Video-to-Text:
+2024-09-14 00:45:03,144:INFO: 	>>>  V2T$R@1: 41.7 - V2T$R@5: 60.4 - V2T$R@10: 64.0 - V2T$Median R: 2.0 - V2T$Mean R: 20.3
+2024-09-14 00:45:03,192:INFO: The best model is: logs/msvd/seqLSTM_vit32/pytorch_model.bin.0, the R1 is: 45.6795

@@ -2,12 +2,15 @@ import torch
 from torch.utils.data import DataLoader
 # from dataloaders.dataloader_msrvtt_retrieval import MSRVTT_DataLoader
 # from dataloaders.dataloader_msrvtt_retrieval import MSRVTT_TrainDataLoader
-from dataloaders.dataloader_msrvtt_retrieval_teachclip import MSRVTT_DataLoader
-from dataloaders.dataloader_msrvtt_retrieval_teachclip import MSRVTT_TrainDataLoader
-from dataloaders.dataloader_msvd_retrieval import MSVD_DataLoader
+# from dataloaders.dataloader_msvd_retrieval import MSVD_DataLoader
 from dataloaders.dataloader_lsmdc_retrieval import LSMDC_DataLoader
 from dataloaders.dataloader_activitynet_retrieval import ActivityNet_DataLoader
 from dataloaders.dataloader_didemo_retrieval import DiDeMo_DataLoader
+
+from dataloaders.dataloader_msrvtt_retrieval_teachclip import MSRVTT_DataLoader
+from dataloaders.dataloader_msrvtt_retrieval_teachclip import MSRVTT_TrainDataLoader
+from dataloaders.dataloader_msvd_retrieval_teachclip import MSVD_DataLoader
+
 
 def dataloader_msrvtt_train(args, tokenizer):
     msrvtt_dataset = MSRVTT_TrainDataLoader(

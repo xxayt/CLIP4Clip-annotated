@@ -14,11 +14,13 @@ from modules.tokenization_clip import SimpleTokenizer as ClipTokenizer
 from modules.file_utils import PYTORCH_PRETRAINED_BERT_CACHE
 from modules.modeling import CLIP4Clip
 from modules.optimization import BertAdam
+from datetime import timedelta
 
 from util import parallel_apply, get_logger
 from dataloaders.data_dataloaders import DATALOADER_DICT
 
-torch.distributed.init_process_group(backend="nccl")
+# torch.distributed.init_process_group(backend="nccl")
+torch.distributed.init_process_group(backend="nccl", timeout=timedelta(seconds=7200))
 
 global logger
 
